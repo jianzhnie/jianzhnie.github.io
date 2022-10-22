@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>开源 | Academic</title>
+    <title>开源 | Robin 的个人主页</title>
     <link>https://jianzhnie.github.io/tag/%E5%BC%80%E6%BA%90/</link>
       <atom:link href="https://jianzhnie.github.io/tag/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
     <description>开源</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>开源</title>
@@ -51,7 +51,7 @@
 &lt;li&gt;👉 &lt;a href=&#34;https://wowchemy.com/templates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Create a new site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;📚 &lt;a href=&#34;https://wowchemy.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Personalize your site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;💬 &lt;a href=&#34;https://discord.gg/z8wNYzb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chat with the &lt;strong&gt;Wowchemy community&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Hugo community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/wowchemy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@wowchemy&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%23MadeWithWowchemy&amp;amp;src=typed_query&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#MadeWithWowchemy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/wowchemy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@wowchemy&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCuHen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@GeorgeCuHen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%23MadeWithWowchemy&amp;amp;src=typed_query&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#MadeWithWowchemy&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;💡 &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-themes/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt; for &lt;em&gt;Wowchemy&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;⬆️ &lt;strong&gt;Updating Wowchemy?&lt;/strong&gt; View the &lt;a href=&#34;https://wowchemy.com/docs/hugo-tutorials/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Update Tutorial&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/updates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -87,7 +87,7 @@
 &lt;p&gt;Wowchemy and its templates come with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/customization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully customizable.&lt;/p&gt;
 &lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecuHen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George CuHen&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Released under the &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-themes/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
 </description>
     </item>

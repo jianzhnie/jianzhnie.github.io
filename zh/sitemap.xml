@@ -2,28 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jianzhnie.github.io/talk/example-talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://jianzhnie.github.io/event/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://jianzhnie.github.io/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jianzhnie.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://jianzhnie.github.io/"
-                />
-  </url><url>
     <loc>https://jianzhnie.github.io/tag/academic/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -49,6 +27,20 @@
     <loc>https://jianzhnie.github.io/post/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jianzhnie.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://jianzhnie.github.io/"
+                />
   </url><url>
     <loc>https://jianzhnie.github.io/tags/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
@@ -112,6 +104,10 @@
   </url><url>
     <loc>https://jianzhnie.github.io/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/terms/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://jianzhnie.github.io/tag/deep-learning/</loc>

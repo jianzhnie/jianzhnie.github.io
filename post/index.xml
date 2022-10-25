@@ -5,7 +5,7 @@
     <link>https://jianzhnie.github.io/post/</link>
       <atom:link href="https://jianzhnie.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
@@ -13,19 +13,78 @@
     </image>
     
     <item>
-      <title>Welcome to Wowchemy, the website builder for Hugo</title>
-      <link>https://jianzhnie.github.io/post/getting-started/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://jianzhnie.github.io/post/getting-started/</guid>
-      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libr&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li&gt;
-&lt;li&gt;The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong&gt;no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong&gt; and having &lt;strong&gt;flexibility to later add even deeper personalization with HTML and CSS&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href=&#34;https://wowchemy.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+      <title>Diamond</title>
+      <link>https://jianzhnie.github.io/post/diamond/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://jianzhnie.github.io/post/diamond/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;将序列比对到nt、nr、uniprot、pfam等数据库是常有的事，blast无疑是最常用的比对软件，但是它的速度一直提不起来，非常耗费时间。估计比对等不到blast的结果了，于是想到了另一款软件Diamond&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;diamond简介&#34;&gt;Diamond简介&lt;/h2&gt;
+&lt;p&gt;序列比对软件，能输出与BLAST类似的结果，但是速度快了数百倍。&lt;/p&gt;
+&lt;p&gt;对于长序列，支持Frameshift alignments；&lt;/p&gt;
+&lt;p&gt;占用资源更少，但只是相对blast来讲；&lt;/p&gt;
+&lt;p&gt;自定义多种输出格式&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;记得引用：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Buchfink B, Xie C, Huson DH, “Fast and sensitive protein alignment using DIAMOND”, &lt;em&gt;Nature Methods&lt;/em&gt; &lt;strong&gt;12&lt;/strong&gt;, 59-60 (2015). &lt;a href=&#34;https://doi.org/10.1038/nmeth.3176&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;doi:10.1038/nmeth.3176&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;diamond使用&#34;&gt;Diamond使用&lt;/h2&gt;
+&lt;p&gt;还是conda安装好diamond，说明书在此：https://github.com/bbuchfink/diamond/raw/master/diamond_manual.pdf&lt;/p&gt;
+&lt;h3 id=&#34;第一步-准备数据集&#34;&gt;第一步: 准备数据集&lt;/h3&gt;
+&lt;p&gt;先从NCBI上下载蛋白数据库。 NR库是NCBI的非冗余蛋白数据库，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gunzip nr.gz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;第二步-建库&#34;&gt;第二步: 建库&lt;/h3&gt;
+&lt;p&gt;就两个参数，&lt;code&gt;--in nr&lt;/code&gt;输入文件，&lt;code&gt;--db nr&lt;/code&gt; 输出的数据库前缀&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diamond makedb --in nr.faa -db nr -p &lt;span class=&#34;m&#34;&gt;20&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最近下载了一个nr数据库，解压完是110G，命名为nr.faa.&lt;/p&gt;
+&lt;p&gt;结果会生成一个nr.dmnd的索引文件&lt;/p&gt;
+&lt;p&gt;我用了20核构建了110G的nr数据库，用时5726.56s，作为参考&lt;/p&gt;
+&lt;p&gt;Pfam数据库7.1G，24核用时190.931s，还是非常快的&lt;/p&gt;
+&lt;p&gt;附带数据库下载地址：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nr&lt;/strong&gt;：http://mirrors.vbi.vt.edu/mirrors/ftp.ncbi.nih.gov/blast/db/FASTA/nr.gz&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pfam&lt;/strong&gt;：ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/Pfam-A.fasta.gz&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Uniprot:&lt;/strong&gt; &lt;a href=&#34;ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz&#34;&gt;ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第三步-搜索&#34;&gt;第三步: 搜索&lt;/h3&gt;
+&lt;p&gt;就两个子命令，blastp和blastx，前者比对蛋白，后者比对DNA序列&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 因为要将核酸序列比对到蛋白库，因此使用blastx功能&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diamond blastx -d nr -q reads.fna -o nr.matches
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;默认输出格式是BLAST的tab结果，&lt;code&gt;-o&lt;/code&gt;指定输出文件名&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-q/ &amp;ndash;query输入检索序列&lt;/li&gt;
+&lt;li&gt;&amp;ndash;out/ -o输出文件，默认以&amp;ndash;outfmt 6输出结果和BLAST+的&amp;ndash;outfmt 6结果一致。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;需要注意的是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这个过程需要消耗大量的内存与硬盘（用于存放临时文件），如果资源不够，可以设置&lt;code&gt;-b&lt;/code&gt;参数调整&lt;/li&gt;
+&lt;li&gt;默认的比对模式（fast模式）是针对短序列的，如果要比对的序列比较长，建议使用sensitive模式，设置&lt;code&gt;—sensitive&lt;/code&gt;或者&lt;code&gt;--more-sensitive&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行时间不与比对文件大小成正比，相反，文件越大（比如大于1M reads）比对速度越快&lt;/li&gt;
+&lt;li&gt;比对结果中的X表示Masked residues&lt;/li&gt;
+&lt;li&gt;默认的阈值是0.001而Blast是10，相比之下，diamond比对更严格，得到的weak hits会更少&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Protein 数据库</title>
+      <link>https://jianzhnie.github.io/post/protein%E6%95%B0%E6%8D%AE%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://jianzhnie.github.io/post/protein%E6%95%B0%E6%8D%AE%E4%BB%8B%E7%BB%8D/</guid>
+      <description>&lt;h3 id=&#34;go数据库&#34;&gt;GO数据库：&lt;/h3&gt;
+&lt;p&gt;官网及详细说明：&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttp%3A%2F%2Fgeneontology.org%2Fdocs%2Fdownload-ontology%2F&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://geneontology.org/docs/download-ontology/&lt;/a&gt;
+具体GO数据库的搭建参考Blast2go文章详解&lt;/p&gt;
+&lt;h3 id=&#34;kegg数据库&#34;&gt;Kegg数据库：&lt;/h3&gt;
+&lt;p&gt;KEGG（Kyoto Encyclopedia of Genes and Genomes）京都基因和基因组百科全书，是研究Pathway代谢通路的最主要数据库，整合了基因组信息、化学信息、系统信息及疾病和健康信息。&lt;/p&gt;
+&lt;h3 id=&#34;uniprot-数据库&#34;&gt;UniProt 数据库：&lt;/h3&gt;
+&lt;p&gt;Unified Protein Database（简称UniProt）是信息最丰富、资源最广的蛋白质序列数据库，含蛋白质序列，功能信息，研究论文索引等信息, 整合了包括EBI（ European Bioinformatics Institute），SIB（the Swiss Institute of Bioinformatics），PIR（Protein Information Resource）三大数据库的资源。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EBI（ European Bioinformatics Institute）：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;欧洲生物信息学研究所（EMBL-EBI）是欧洲生命科学旗舰实验室EMBL的一部分。位于英国剑桥欣克斯顿的惠康基因组校内，是世界上基因组学领域最强的存在之一。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SIB（the Swiss Institute of Bioinformatics）：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;瑞士日内瓦的SIB维护着ExPASy（专家蛋白质分析系统）服务器，这里包含有蛋白质组学工具和数据库的主要资源。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PIR（Protein Information Resource）：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;PIR是美国国家生物医学研究基金会（NBRF）于1984年创立，旨在协助研究人员识别和解释蛋白质序列信息。&lt;/p&gt;
+&lt;p&gt;Uniprot数据库主要子数据库组成：&lt;/p&gt;
+&lt;p&gt;以上子数据库间的关系如下：Uniprot会收集EMBL，GenBank，DDBJ等公共数据库中的蛋白质序列及功能信息等原始数据，处理后存入UniParc的非冗余蛋白质序列数据库；UniPrc作为数据仓库，再分别给UniProtKB，Proteomes，UNIRef提供可靠的数据集，其中在UniProtKB数据库中Swiss-Prot是由TrEMBL经过手动注释后得到的高质量非冗余数据库，也是我们最常用的蛋白质数据库之一。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.omicsclass.com/image/show/attachments-2022-01-QRiCJpWl61e81e76a783e.jpg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
 
 
 
@@ -43,52 +102,450 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/main/starters/academic/preview.png&#34; alt=&#34;The template is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;Protein%20%E5%8A%9F%E8%83%BD%E6%B3%A8%E9%87%8A.assets/attachments-2022-01-QRiCJpWl61e81e76a783e.jpg&#34; alt=&#34;attachments-2022-01-QRiCJpWl61e81e76a783e.jpg&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;get-started&#34;&gt;Get Started&lt;/h2&gt;
+&lt;p&gt;Uniprot数据库官方链接：https://www.uniprot.org/&lt;/p&gt;
+&lt;h4 id=&#34;uniprotkbswiss-prot&#34;&gt;&lt;strong&gt;UniProtKB/Swiss-Prot&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;高质量的、手工注释的、非冗余的数据集&lt;/p&gt;
+&lt;p&gt;Swiss-Prot旨在提供与高水平注释（例如，蛋白质功能，其域结构，翻译后修饰，变体等的描述）相关的可靠蛋白质序列，最小程度的冗余和高水平与其他数据库的集成级别。注释主要来自文献中的研究成果和E-value校验过计算分析结果，有质量保证的数据才被加入该数据库 。&lt;/p&gt;
+&lt;p&gt;Swiss-Prot由Amos Bairoch博士在1986年创建，由瑞士生物信息学研究所开发，随后由欧洲生物信息学研究所的Rolf Apweiler开发。也是说EBI和SIB共同制作了Swiss-Prot和TrEMBL数据库。&lt;/p&gt;
+&lt;p&gt;Swiss-Prot条目的注释中使用了一系列序列分析工具。包括手动评估，计算机预测，并选择结果包含在相应的条目中。这些预测包括翻译后修饰，跨膜结构域和拓扑，信号肽，结构域识别和蛋白质家族分类。&lt;/p&gt;
+&lt;p&gt;来自相同基因和相同物种的序列合并到相同的数据库条目中。确定序列之间的差异包含：可变剪接，自然变异，错误的起始位点，错误的外显子边界，移码，未识别的冲突。&lt;/p&gt;
+&lt;p&gt;注释会用相关出版物通过搜索数据库（例如PubMed）进行识别。阅读每篇论文的全文，然后提取信息并将其添加到条目中。科学文献中的注释包括但不限于：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;👉 &lt;a href=&#34;https://wowchemy.com/templates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Create a new site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;📚 &lt;a href=&#34;https://wowchemy.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Personalize your site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💬 &lt;a href=&#34;https://discord.gg/z8wNYzb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chat with the &lt;strong&gt;Wowchemy community&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Hugo community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/wowchemy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@wowchemy&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCuHen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@GeorgeCuHen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%23MadeWithWowchemy&amp;amp;src=typed_query&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#MadeWithWowchemy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💡 &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-themes/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt; for &lt;em&gt;Wowchemy&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⬆️ &lt;strong&gt;Updating Wowchemy?&lt;/strong&gt; View the &lt;a href=&#34;https://wowchemy.com/docs/hugo-tutorials/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Update Tutorial&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/updates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;蛋白质和基因名称&lt;/li&gt;
+&lt;li&gt;功能&lt;/li&gt;
+&lt;li&gt;特定于酶的信息，例如催化活性，辅因子和催化残基&lt;/li&gt;
+&lt;li&gt;亚细胞定位&lt;/li&gt;
+&lt;li&gt;蛋白质相互作用&lt;/li&gt;
+&lt;li&gt;表达方式&lt;/li&gt;
+&lt;li&gt;重要域和站点的位置和角色&lt;/li&gt;
+&lt;li&gt;离子，底物和辅因子结合位点&lt;/li&gt;
+&lt;li&gt;通过自然遗传变异，RNA编辑，替代剪接，蛋白水解加工和翻译后修饰产生的蛋白质变异形式&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;crowd-funded-open-source-software&#34;&gt;Crowd-funded open-source software&lt;/h2&gt;
-&lt;p&gt;To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p&gt;
-&lt;h3 id=&#34;-click-here-to-become-a-sponsor-and-help-support-wowchemys-future-httpswowchemycomsponsor&#34;&gt;&lt;a href=&#34;https://wowchemy.com/sponsor/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;❤️ Click here to become a sponsor and help support Wowchemy&amp;rsquo;s future ❤️&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;As a token of appreciation for sponsoring, you can &lt;strong&gt;unlock &lt;a href=&#34;https://wowchemy.com/sponsor/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;these&lt;/a&gt; awesome rewards and extra features 🦄✨&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
+&lt;h5 id=&#34;常用的操作&#34;&gt;&lt;strong&gt;常用的操作&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;Protein%20%E5%8A%9F%E8%83%BD%E6%B3%A8%E9%87%8A.assets/v2-ba9fb31690e924c4bc509b198a3924cc_720w.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&amp;lt;1&amp;gt;：这里输入基因名，UniProt ID，或者感兴趣的关键字&lt;/p&gt;
+&lt;p&gt;&amp;lt;2&amp;gt;：筛选：&lt;strong&gt;Reviewed&lt;/strong&gt;：存储在Swiss-Prot数据库中经过验证的蛋白数据，&lt;strong&gt;Unreviewed&lt;/strong&gt;：存储在TrEMBL数据库中没有经过验证的蛋白数据&lt;/p&gt;
+&lt;p&gt;&amp;lt;3&amp;gt;：筛选某个物种，点击就好切换到该物种&lt;/p&gt;
+&lt;p&gt;&amp;lt;4&amp;gt;：通过基因名或蛋白名来筛选&lt;/p&gt;
+&lt;p&gt;&amp;lt;5&amp;gt;：依次是Unprot ID，该蛋白数据库命名，蛋白质名，基因名，物种，序列长&lt;/p&gt;
+&lt;p&gt;&amp;lt;6&amp;gt;：如果需要Blast来查看某个蛋白有哪些序列相似的蛋白序列，先选中感兴趣蛋白前的方框，点击&lt;code&gt;Blast&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;7&amp;gt;：如果需要多序列比对，先选中感兴趣蛋白前的方框，点击&lt;code&gt;Align&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;8&amp;gt;：如果要下载信息，先选中感兴趣蛋白前的方框，点击&lt;code&gt;Download&lt;/code&gt;下载。这里不选择序列，默认会下载全部序列&lt;/p&gt;
+&lt;p&gt;下面以 &lt;code&gt;PO5F1_HUMAN&lt;/code&gt; 为例，下载对应的fasta序列来看看：&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;Protein%20%E5%8A%9F%E8%83%BD%E6%B3%A8%E9%87%8A.assets/v2-4740580ba34951ab5fcd5baf7147b50c_720w.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;下载到的序列：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Q01860&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PO5F1_HUMAN&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;POU&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;domain&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;transcription&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;factor&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;OS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Homo&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sapiens&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;OX&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;9606&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GN&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;POU5F1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SV&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;MAGHLASDFAFSPPPGGGGDGPGGPEPGWVDPRTWLSFQGPPGGPGIGPGVGPGSEVWGI&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;PPCPPPYEFCGGMAYCGPQVGVGLVPQGGLETSQPEGEAGVGVESNSDGASPEPCTVTPG&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;AVKLEKEKLEQNPEESQDIKALQKELEQFAKLLKQKRITLGYTQADVGLTLGVLFGKVFS&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;QTTICRFEALQLSFKNMCKLRPLLQKWVEEADNNENLQEICKAETLVQARKRKRTSIENR&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;VRGNLENLFLQCPKPTLQQISHIAQQLGLEKDVVRVWFCNRRQKGKRSSSDYAQREDFEA&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;AGSPFSGGPVSFPLAPGPHFGTPGYGSPHFTALYSSVPFPEGEAFPPVSVTTLGSPMHSN&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;首先看 &lt;code&gt;&amp;gt;&lt;/code&gt; 后的注释信息&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/wowchemy/hugo-academic-cli&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo Academic CLI&lt;/a&gt;:&lt;/strong&gt; Automatically import publications from BibTeX&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;inspiration&#34;&gt;Inspiration&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href=&#34;https://wowchemy.com/user-stories/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;sp&lt;/strong&gt;：Swiss-Prot数据库的简称，也就是上面说的验证后的蛋白数据库&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Q01860&lt;/strong&gt;：UniProt ID号&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;PO5F1_HUMAN&lt;/strong&gt;：是UniProt 的登录名&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;POU domain, class 5, transcription factor 1&lt;/strong&gt;：蛋白质名称&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;OS=Homo sapiens&lt;/strong&gt;：OS是Organism简称，Homo sapiens为人的拉丁文分类命名，也就是这是人的蛋白质&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;OX=9606&lt;/strong&gt;：Organism Taxonomy，也就是物种分类数据库Taxonomy ID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;GN=POU5F1&lt;/strong&gt;：Gene name，基因名为POU5F1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;PE=1&lt;/strong&gt;：Protein Existence，蛋白质可靠性，对应5个数字，数字越小越可靠：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://wowchemy.com/docs/page-builder/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/docs/content/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://wowchemy.com/docs/content/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://wowchemy.com/docs/import/jupyter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://wowchemy.com/docs/install-locally/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://wowchemy.com/docs/customization/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 34+ language packs including English, 中文, and Português&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
+&lt;li&gt;1：Experimental evidence at protein level&lt;/li&gt;
+&lt;li&gt;2：Experimental evidence at tranlevel&lt;/li&gt;
+&lt;li&gt;3：Protein inferred from homology&lt;/li&gt;
+&lt;li&gt;4：Protein predicted&lt;/li&gt;
+&lt;li&gt;5：Protein uncertain&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-&lt;p&gt;Wowchemy and its templates come with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/customization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully customizable.&lt;/p&gt;
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecuHen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George CuHen&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-themes/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SV=1&lt;/strong&gt;：Sequence Version，序列版本号&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;uniprotkbtrembl&#34;&gt;&lt;strong&gt;UniProtKB/TrEMBL&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;在认识到序列数据的生成速度超过了Swiss-Prot的注释能力时，为了给不在Swiss-Prot中的那些蛋白质提供自动注释，UniProt创建了TrEMBL（翻译的EMBL核苷酸序列数据库）。在三大核酸数据库（EMBL-Bank/GenBank/DDBJ）中注释的编码序列都会被自动翻译并加入该数据库中。它也有来自PDB数据库的序列，以及Ensembl、Refeq和CCDS基因预测的序列。之前提到的PIR组织制作了蛋白质序列数据库（PIR-PSD）。&lt;/p&gt;
+&lt;h4 id=&#34;uniparc&#34;&gt;&lt;strong&gt;UniParc&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;UniProt Archive（UniParc）包含来自主要公共可用蛋白质序列数据库的所有蛋白质序列的非冗余数据集。蛋白质可能存在于几个不同的来源数据库中，并且在同一数据库中存在多个副本。 为了避免冗余，UniParc仅将每个唯一序列存储一次。 相同序列被合并，无论它们来自相同还是不同物种。 每个序列都有一个稳定且唯一的标识符（UPI），从而可以从不同的来源数据库中识别相同的蛋白质。&lt;/p&gt;
+&lt;p&gt;UniParc仅包含蛋白质序列，没有注释。 UniParc条目中的数据库交叉引用允许从源数据库检索有关该蛋白质的更多信息。 当源数据库中的序列发生更改时，UniParc将跟踪这些更改，并记录所有更改的历史记录。&lt;/p&gt;
+&lt;h4 id=&#34;uniref&#34;&gt;&lt;strong&gt;UniRef&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;UniProt Reference Clusters（UniRef）：聚类序列可显著减小数据库大小，从而加快序列搜索的速度。用于计算的蛋白质序列来自UniProtKB和部分UniParc记录的序列。UniRef100序列将相同的序列和序列片段（来自任何生物）合并到一个UniRef条目中，用于显示代表性蛋白质的序列。 使用CD-HIT算法对UniRef100序列进行聚类，并构建UniRef90和UniRef50。UniRef90和UniRef50分别代表每个簇由与最长序列分别具有至少90％或50％序列同一性的序列组成。&lt;/p&gt;
+&lt;h3 id=&#34;cog直系同源蛋白数据库&#34;&gt;COG直系同源蛋白数据库：&lt;/h3&gt;
+&lt;p&gt;COG (蛋白质直系同源簇) 数据库是 NCBI 开发的用于同源蛋白注释的数据库，是将细菌、藻类和真核生物的21个完整基因组的编码蛋白，根据系统进化关系分类构建而成。通过鉴定蛋白与数据库的比对，可以很好的预测蛋白质的功能。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -c ftp://ftp.ncbi.nih.gov/pub/COG/COG2014/data/* 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;fun2003-2014.tab 保存了COG的分类信息，将所有的COG的功能分为了以下26个类别，每个类别用一个字母表示&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cognames2003-2014.tab 文件保存了COG的详细信息，包括编号，对应的分类，功能描述等信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cog2003-2014.csv 文件保存了蛋白和COG的对应关系&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;prot2003-2014.fa.gz 保存了fasta格式的蛋白序列和注释信息，直接对蛋白序列文件构建索引blast比对。示例如下&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;gi&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;103485499&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;ref&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;YP_615060.1&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; chromosomal replication initiation protein &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Sphingopyxis alaskensis RB2256&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;MSGDAAALWPRVAEGLRRDLGARTFDHWLKPVRFADYCALSGVVTLETASRFSANWINERFGDRLELAWRQQLPAVRSVS VRGGVAATERAATLASVPLPTFDAPAAPAANPALLGFDP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;RLSFDRFVVARSNILAANAARRMAMVERPQFNPLYLCSGTG QGKTHLLQAIAQDYAAAHPTATIILMSAEKFMLEFVGAMRGGDMMAFKARLRAADLLLLDDLQFVIGKNSTQEELLHT
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ID DLMTAGKRLVVTADRPPAMLDGVEARLLSRLSGGLVADIEAPEDDLRERIIRQRLAAMPMVEVPDDVIAWLVKHFTRNIR ELEGALNKLLAYAALTGARIDLMLAEDRLAENVRSA
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;RPRITIDEIQRAVCAHYRLDRSDMSSKRRVRAVARPRQVAMYLA KELTPRSYPEIGRRFGGRDHSTVIHAVRTVEALRVADSELDAEIAAIRRSLNS 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;kog数据库&#34;&gt;KOG数据库：&lt;/h3&gt;
+&lt;p&gt;“KOG”是Clusters of orthologous groups for eukaryotic complete genomes（真核生物蛋白相邻类的聚簇）的缩写。构成每个KOG的蛋白都是被假定为来自于一个祖先蛋白，并且因此或者是orthologs或者是paralogs。Orthologs是指来自于不同物种的由垂直家系（物种形成）进化而来的蛋白，并且典型的保留与原始蛋白有相同的功能。Paralogs是那些在一定物种中的来源于基因复制的蛋白，可能会进化出新的与原来有关的功能。数据库链接：&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dftp%3A%2F%2Fftp.ncbi.nih.gov%2Fpub%2FCOG%2FKOG%2Fkyva&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ftp://ftp.ncbi.nih.gov/pub/COG/KOG/kyva&lt;/a&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -c ftp://ftp.ncbi.nih.gov/pub/COG/* 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;eggnog数据库&#34;&gt;EggNOG数据库：&lt;/h3&gt;
+&lt;p&gt;EggNOG数据库是直源同系蛋白分组比对（evolutionary genealogy of genes: Non-supervised Orthologous Groups）数据库，由EMBL创建并维护，是对NCBI的COG数据库进行拓展，提供了不同分类水平蛋白的直系同源分组（Orthologous Groups，OG），包括真核物种、原核物种及病毒的数据信息。它扩展了COG数据库的分类方法，采用无监督聚类算法在全基因组范围内推导基因功能，更适用于谱系特征基因的分析。
+&lt;strong&gt;新版本EggNOG 5.0的主页地址：&lt;/strong&gt;&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttp%3A%2F%2Feggnog5.embl.de%2F%23%2Fapp%2Fhome&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://eggnog5.embl.de/#/app/home&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;新版本另一个改进是不再使用物种名称缩写，而是使用更加规范的NCBI Taxid来进行物种分类，对应的数据下载地址如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://eggnog5.embl.de/download/eggnog_5.0/per_tax_level/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下载数据：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -c http://eggnog5.embl.de/download/eggnog_5.0/e5.proteomes.faa
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -c http://eggnog5.embl.de/download/eggnog_5.0/e5.taxid_info.tsv 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -c http://eggnog5.embl.de/download/eggnog_5.0/e5.og_annotations.tsv 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中e5.proteomes.faa为所有的蛋白组序列，e5.taxid_info.tsv为Taxid对应的物种名称以及完整的谱系信息，e5.og_annotations.tsv为所有的NOG group信息，其第一列为Taxid，第二列为NOG groups，第三列为COG归属，第四列为Function。
+但现在我们还不能完成注释，必须需要蛋白序列id与NOG group的对应信息，这个信息在per_tax_level下不同taxonomy level的members.tsv文件中，我们将下载好的所有物种的members.tsv文件合并。
+members.tsv有五列（如下所示），其中第一列为Taxid，因为我们下载的是细菌bacteria所以第一列均为2，第二列为NOG group，第三列为该NOG group所包含的蛋白序列数目，第四列为该NOG group所包含的物种数目，第五列为该NOG group所包含的蛋白序列id，第六列为该NOG group所包含的物种的Taxid。结合该members.tsv文件与前面的e5.og_annotations.tsv，就可知道比对上的蛋白序列所属的NOG group、COG categories、Function。&lt;/p&gt;
+&lt;h3 id=&#34;pfam数据库&#34;&gt;Pfam数据库：&lt;/h3&gt;
+&lt;p&gt;Pfam数据库是蛋白质家族的数据库，根据多序列比对结果和隐马尔可夫模型，将蛋白质分为不同的家族。网址如下： &lt;a href=&#34;https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttp%3A%2F%2Fpfam.xfam.org%2F&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://pfam.xfam.org/&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装HMMer&lt;/li&gt;
+&lt;li&gt;从&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dftp%3A%2F%2Fftp.ebi.ac.uk%2Fpub%2Fdatabases%2FPfam%2Freleases%2F&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/&lt;/a&gt;下载pfam数据库Pfam-A.hmm&lt;/li&gt;
+&lt;li&gt;得到 PFAM 数据库的 HMM 文件。 HMM 文件是文本文件，需要将其变成二进制格式，以加快运算速度，同时进行压缩，并建立成索引数据库。 命令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hmmpress Pfam-A.hmm  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;使用 hmmscan 进行 Pfam 注释示例：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hmmscan -o out.txt --tblout out.tbl --noali -E 1e-5 Pfam-A.hmm file.fasta 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;附 hmmscan [-options]几个主要选项含义&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;-h 显示帮助信息 -o FILE 将结果输出到指定的文件中。默认是输出到标准输出。
+&amp;ndash;tblout FILE 将蛋白质家族的结果以表格形式输出到指定的文件中。默认不输出该文件。
+&amp;ndash;domtblout FILE 将蛋白结构域的比对结果以表格形式输出到指定的文件中。默认不输出该文件。该表格中包含query序列起始结束位点与目标序列起始结束位点的匹配信息。
+&amp;ndash;acc 在输出结果中包含 PF 的编号，默认是蛋白质家族的名称。
+&amp;ndash;noali 在输出结果中不包含比对信息。输出文件的大小则会更小。
+-E FLOAT default:10.0 设定 E_value 阈值，推荐设置为 1e-5 。
+-T FLOAT 设定 Score 阈值。
+&amp;ndash;domE FLOAT default:10.0 设定 E_value 阈值。该参数和 -E 参数类似，不过是 domain 比对设定的值。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;string数据库&#34;&gt;String数据库：&lt;/h3&gt;
+&lt;p&gt;STRING数据库（&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttps%3A%2F%2Fstring-db.org%2F&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://string-db.org/&lt;/a&gt;）是一个搜寻已知蛋白质之间和预测蛋白质之间相互作用关系的系统。这种作用关系既可以是蛋白质之间的物理作用，也可以是间接的功能相关性。它基于染色体临近、系统进化谱、基因融合和基因芯片数据等生物学信息来计算基因或者蛋白的共表达。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -c https://stringdb-static.org/download/protein.links.v11.0.txt.gz #protein network data (scored links between proteins) 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -c https://stringdb-static.org/download/protein.actions.v11.0.txt.gz #interaction types for protein links  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perl data_extract_by_ids.pl -idfile ../Nr/Archaea.list -destfile protein.actions.v11.0.change.txt -out Archaea.actions.v11.0.change.txt &amp;amp; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perl data_extract_by_ids.pl -idfile ../Nr/Archaea.list -destfile protein.links.v11.0.change.txt -out Archaea.links.v11.0.txt &amp;amp; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perl data_extract_by_ids.pl -idfile ../Nr/Bacteria.list -destfile protein.actions.v11.0.change.txt -out Bacteria.actions.v11.0.change.txt &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perl data_extract_by_ids.pl -idfile ../Nr/Bacteria.list -destfile protein.links.v11.0.change.txt -out Bacteria.links.v11.0.txt &amp;amp; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perl data_extract_by_ids.pl -idfile ../Nr/Eukaryota.list -destfile protein.actions.v11.0.change.txt -out Eukaryota.actions.v11.0.change.txt 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perl data_extract_by_ids.pl -idfile ../Nr/Eukaryota.list -destfile protein.links.v11.0.change.txt -out Eukaryota.links.v11.0.txt &amp;amp; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;10.1. 动物转录因子数据AnimalTFDB3.0简介&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;动物转录因子数据库AnimalTFDB3.0]对97个动物基因组的转录因子（Transcription Factor）和转录辅助因子（Transcription cofactor）进行了归纳整理。基于DNA结合结构域，将动物转录因子分成了73个基因家族，将转录辅助因子分成了83个基因家族。此外，动物转录因子分为六大类（Basic Domain Group、Zinc-Coordinating Group、Beta-Scaffold Factors、Helix-turn-helix、Other Alpha-Helix Group和Unclassified Structure），动物转录辅助因子也分为六大类（Co-activator/repressors、Chromatin Remodeling Factors、General Cofactors、Histone-modifying Enzymes、Cell Cycle和Other Cofactors）。
+动物转录因子数据库AnimalTFDB3.0提供了[网页工具] 进行转录因子分析。该网页工具一次仅支持上传不超过1000条蛋白序列，不利于动物全基因组的转录因子分析。以下讲解下载AnimalTFDB3.0数据库FASTA文件，并自行编写程序进行转录因子和转录辅助因子注释。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;下载14个hmm文件并合并&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -c http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/hmm/* 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;下载97个物种的蛋白序列、转录因子、转录辅助因子、转录辅助因子序列&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/Ailuropoda_melanoleuca_TF_protein.fa 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/Ailuropoda_melanoleuca_TF 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/Ailuropoda_melanoleuca_TF_cofactors 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/Ailuropoda_melanoleuca_Cof_protein.fa  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;参考：&lt;/strong&gt;[http://www.chenlianfu.com/?p=2759]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;10.2. 植物转录因子数据AnimalTFDB3.0简介&lt;/strong&gt;
+PlnTFDB [http://plntfdb.bio.uni-potsdam.de/v3.0/] 是一个植物转录因子数据库，该数据库收录了大部分植物模式物种，包括拟南芥，水稻等20个物种的84个转录因子家族，包含28193 protein models, 26184 distinct protein sequences。它支持在线blast进行比对，也可以将数据下载后进行本地blast。
+&lt;strong&gt;分析工具：iTAK&lt;/strong&gt; :[http://itak.feilab.net/cgi-bin/itak/index.cgi]&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget ftp://itak.feilab.net/pub/program/itak/old/iTAK-1.7.tar.gz 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;软件内部内置了PlantTFDB的数据库数据，可以直接用于预测植物转录因子，使用方法非常简单，只需要输入您需要鉴定的蛋白序列fasta格式即可。&lt;/p&gt;
+&lt;p&gt;其中classification.txt就是我们得到的植物转录因子预测结果：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;alignment.txt：输入序列和数据库比对结果&lt;/li&gt;
+&lt;li&gt;classification.txt：输入序列鉴定结果，ID 1：输入序列，ID 2：Family 鉴定的家族名称&lt;/li&gt;
+&lt;li&gt;Type Family 类型，包含 TF，TR，PK TF: transcription factors TR: transcription regulator PK: protein kinases.&lt;/li&gt;
+&lt;li&gt;Sequence.fasta：输入序列比对上家族的氨基酸序列&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;10.3. 真菌转录因子数据库Fungal TFDB简介&lt;/strong&gt;
+真菌转录因子数据库Fungal TFDB1.2([http://ftfd.snu.ac.kr/index.php?a=view])
+对249个真菌（包含6个卵菌）基因组的转录因子和228个非真菌系的转录因子进行了归纳整理。基于转录因子家族分类，共获得61个家族，包含18563个真菌转录因子序列。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python 解析go的obo文件</title>
+      <link>https://jianzhnie.github.io/post/python-%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://jianzhnie.github.io/post/python-%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6/</guid>
+      <description>&lt;h3 id=&#34;go的obo文件解析python代码&#34;&gt;GO的obo文件解析Python代码&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;介绍：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在现在的组学研究中几乎离不开GO分析，那么GO是干什么的呢，GO的诞生主要目的是来归类统一生物学方言的（不同的生物学数据库可能会使用不同的术语），它是一个有向无环图（DAG）本体,主要形式是一term标记，每个GO term代表一种功能描述，都属于ontology.&lt;/p&gt;
+&lt;p&gt;而GO总共分成三个ontology:molecular function, cellular component 和biological process；&lt;/p&gt;
+&lt;p&gt;在GO中GO term之间存在多种关系，常见的主要是 is_a 和 part_o f和两种关系，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;is_a：表示包含关系，如图中黑色箭头，需要强调的是“完全包含”；&lt;/li&gt;
+&lt;li&gt;Part_of：表示一部分，如图蓝色箭头部分，简单的来说是A part_of_B意味着如果A出现，那么它就肯定是B的一部分或组成部分，但A不一定总会出现。比如叶绿体 part_of 细胞，叶绿体肯定是细胞的一部分，但有的细胞没有叶绿体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.shengxin.ren/image/show/attachments-2017-05-gTNS5jPL592d3f1a5bf07.&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://www.shengxin.ren/image/show/attachments-2017-05-gTNS5jPL592d3f1a5bf07.&#34; alt=&#34;attachments-2017-05-gTNS5jPL592d3f1a5bf0&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;strong&gt;使用：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;了解GO之后，怎么使用它是一个永远的话题，比如手头有一个基因序列但不知道它的功能，那么经常的做法是会进行GO注释，从 GO注释中来推断这个基因序列的功能，这篇文章主要是来分享一下对于GO的obo文件的解析的，obo文件是用来存储所有GO term关系的文件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#encoding:utf-8&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;Created on 2017.5.29
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;@author: zhura
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;GOBase&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;fm&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;alt_ids&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;namespace&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parent&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;allParents&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ObOs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;fm&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parseObO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;parseObO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;lines&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;readlines&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_goTxt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;line&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lines&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;line&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;line&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rstrip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;strip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;_goTxt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;line&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;and&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;line&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parseGO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_goTxt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;_goTxt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;line&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;[Term]&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;parseGO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_goText&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_namespace&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_is_as&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_alt_ids&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_goText&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;id:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;name:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rstrip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lstrip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;namespace:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;_namespace&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rstrip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lstrip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;alt_id:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;_alt_ids&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;is_a:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;relationship:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;_is_as&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_txt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;has_key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GOBase&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;namespace&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_namespace&lt;/span&gt;   
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parent&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parseParent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_is_as&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;alt_ids&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_alt_ids&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_alt_ids&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_alt&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_alt_ids&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_alt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                               
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;parseParent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;is_as&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;__parent&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;isa&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;is_as&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;has_key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;isa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;cGo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GOBase&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;isa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;isa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cGo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;__parent&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;isa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__parent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getLevel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_min&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;lev&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getLevel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_min&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &lt;span class=&#34;n&#34;&gt;_min&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_min&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getAllParent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_prs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;allParents&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;allParents&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parent&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;None&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;allParents&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_prs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;allParents&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;ap&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getAllParent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_prs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extend&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;allParents&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_prs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;allParents&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;vm&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;obo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;D:/bgDB/go-basic.obo.txt&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;ob&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ObOs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;obo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ob&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getAllParent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GO:0004322&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ob&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getLevel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GO:0004322&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ob&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getLevel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GO:0003824&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>微生物知识基础</title>
+      <link>https://jianzhnie.github.io/post/%E5%BE%AE%E7%94%9F%E7%89%A9/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://jianzhnie.github.io/post/%E5%BE%AE%E7%94%9F%E7%89%A9/</guid>
+      <description>&lt;p&gt;肠道菌群，作为寄居在人体肠道内微生物群落的总称，是近年来微生物学、医学、基因学等领域最引人关注的研究焦点之一。 &lt;/p&gt;
+&lt;p&gt;近年来的研究逐渐揭示了肠道菌群的构成、数量、如何进入人体、如何辅助消化、如何影响肠道发育，以及肠道菌群失衡如何影响整体健康。 &lt;/p&gt;
+&lt;p&gt;但肠道菌群如此庞大，与人体的交互关系如此复杂，关于肠道菌群仍有诸多悬而未解的难题。无外乎很多科学家将其称为人体的另一个器官，甚至“另一个你”。&lt;/p&gt;
+&lt;p&gt;人类的胃肠内有数万亿个微生物，包括细菌、真菌和病毒。它们大多分布在大肠中，数量大致与全身的细胞数相当。在人体肠道细菌中，只有10%到20%的细菌是与他人相同的。&lt;/p&gt;
+&lt;img title=&#34;&#34; src=&#34;http://www.im.cas.cn/kxcb/wswdjt/201510/W020151010512858359438.jpg&#34; alt=&#34;&#34; width=&#34;614&#34;&gt;
+&lt;p&gt;左上）双歧杆菌，（右上）乳酸杆菌，（左下）肠球菌，（右下）大肠杆菌&lt;/p&gt;
+&lt;h3 id=&#34;肠道菌群是什么&#34;&gt;&lt;strong&gt;肠道菌群是什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;这里有三个关键词，肠道、菌、群。 &lt;/p&gt;
+&lt;p&gt;研究微生物的科学家，给了一个通俗易懂的定义——生存在人的肠道里的大量细菌构成的集体，就叫做肠道菌群。 &lt;/p&gt;
+&lt;p&gt;这家伙并不是人与生俱来的。胎儿在子宫里是处于无菌状态的，但胎儿出生后，伴随第一口呼吸、第一口乳液、第一嘴辅食，肠道菌群的始祖们，也随着食物、空气、水进入肠道并安营扎寨，不断壮大队伍，扩充地盘，最终形成稳定的菌群构成。&lt;/p&gt;
+&lt;h3 id=&#34;肠道菌群有什么&#34;&gt;&lt;strong&gt;肠道菌群有什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;前面说了，肠道菌群构成复杂，细菌种类繁多，但还是能划分为三种类型。 &lt;/p&gt;
+&lt;p&gt;第一种是共生菌群，主要有拟杆菌、梭菌、双歧杆菌、乳酸杆菌。这几个名很熟悉吧，现在各类产品中铺天盖地的益生菌，说的就是后两者，有很多益生元或益生素就是用于补充或者刺激双歧杆菌的生长。 &lt;/p&gt;
+&lt;p&gt;这些细菌势力最为庞大，占到了肠道菌群的99%以上，跟人形成良好的合作关系，辅助消化多种食物，并保护我们的肠道。 &lt;/p&gt;
+&lt;p&gt;第二种是条件致病菌群，主要有肠球菌、肠杆菌等。这些家伙数量不多，但属于肠道里的不稳定因素。肠道健康时，共生菌群占压倒性优势，条件致病菌群就很安分；但要是共生菌群被破坏了，这些家伙就会引发多种肠道疾病。 &lt;/p&gt;
+&lt;p&gt;第三种是致病菌群，比如沙门氏菌、致病大肠杆菌等。它们是健康的破坏者，本不属于肠道，但一旦误食进入肠道，就会兴风作浪，导致腹泻、食物中毒等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;肠道菌群都干些什么？&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;肠道菌群，或者说共生菌群，不是住在你的肠道白吃白喝的，它与你的健康休戚相关。 &lt;/p&gt;
+&lt;p&gt;首先，也是最重要的，帮你吃饭。 &lt;/p&gt;
+&lt;p&gt;人是所有生物中饮食最复杂的，肉、菜、谷物，无所不食。但吃是一码事，消化吸收是另一码事。人最主要的消化器官就是肠道，但面对如此繁多的食物，纵使肠道有三头六臂，也处理不了这么繁重的工作。 &lt;/p&gt;
+&lt;p&gt;于是在人类漫长的进化史中，肠道请来了帮手——共生菌群。肠道为它们提供天然的厌氧环境作为住所；后者特别擅长分解复杂纤维和多糖，把得到的葡萄糖、维生素、脂肪、微量元素，作为房租交给肠道，供人体吸收。两者各取所取，有饭一起吃，有钱一起赚。 &lt;/p&gt;
+&lt;p&gt;其次，保护你的健康。 &lt;/p&gt;
+&lt;p&gt;一方面，大量的菌群黏附在肠壁上，为肠道穿上了一层天然的铠甲，避免肠壁与有害物质直接接触。另一方面，共生菌群会与肠道的免疫系统形成互动，刺激后者的发育，使肠道应对致病微生物的“反导系统”更加强大。 &lt;/p&gt;
+&lt;p&gt;此外，共生菌群还会直接上阵，帮助消灭致病菌。 &lt;/p&gt;
+&lt;p&gt;因为共生菌群与致病菌群都以肠道为生存环境，致病菌的入侵，直接侵占了共生菌群的地盘。面对这种情形，占绝对优势的共生菌自然不会答应，第一时间就会通过“菌数”优势，压制致病菌势力，在保护自己家园的同时，也保护人体的健康。 &lt;/p&gt;
+&lt;p&gt;再者，调节你的生理。 &lt;/p&gt;
+&lt;p&gt;正常的肠道菌群，为了改善自己的居住环境，也就是你的肠道，会将分解的短链脂肪酸滋养肠壁细胞，促进肠壁细胞的生长和更替，还能促进肠壁分泌更多的消化酶。 &lt;/p&gt;
+&lt;p&gt;同时，它们还能调节肠粘膜的生长，让受损的肠粘膜更快的得到修复——自家房子漏雨的还不赶快修呀。除此之外，肠道菌群能产生类胡萝卜素类物质，降低动脉硬化和中风的风险；还能通过跟淋巴系统谈判，降低对食物的过敏反应。更为神奇的是，最新的研究成果表明，肠道菌群能根据对它对食物的喜好，调节你的生理和心理状态。&lt;/p&gt;
+&lt;p&gt;通过&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3957428/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;饮食改变&lt;/a&gt;、药物、甚至&lt;a href=&#34;https://www.nytimes.com/2018/01/03/well/move/exercise-microbiome-health-weight-gut-bacteria.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;锻炼&lt;/a&gt;，人类的微生物组可能很快发生改变。因此，通过仔细检查肠道，我们能够发现疾病出现和扩散的迹象，这对于改善我们的健康状况，甚至延长寿命都至关重要。&lt;/p&gt;
+&lt;p&gt;借助科学研究领域的人工智能和机器学习，科学家尽可能多地采集人的微生物学特征，以了解发生疾病变化的表征。研究者也可通过操纵生物群系，找到抵御、甚至治愈疾病的方法。&lt;/p&gt;
+&lt;p&gt;如果我们认为每个微生物组都不同，则可根据个体基因突变和生物组成对症下药。据此，研究者正在从简单的诊断向预防医学和个人医学转变。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;预测性：&lt;/strong&gt; 研究认为，在发病或病情发展之前的几个月、甚至是几年内，人类的微生物组都有可能发生变化。但饮食、压力、锻炼和其他因素也可以改变微生物组。医学科学家正在努力了解哪些变化是由于生活方式的不同，又有哪些变化表示疾病的出现。检测健康人体的微生物组，提供基线指标，借此分析这段时间内的变化。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预防性：&lt;/strong&gt; 研究者正在寻找填充人体系统及其活动的微生物类型，以找到抵御糖尿病、癌症和痴呆症等疾病的建议。研究者希望将基因数据与微生物组数据相结合，以提供预防性护理。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;个性化：&lt;/strong&gt; 直至今日，基于人体独特生物学特点的“个性化”或“精确”治疗主要依赖家族史和 DNA 分析。研究者希望通过微生物组包含的数据做出&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5824491/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;更为准确&lt;/a&gt;的治疗选择。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在每个人的生物群系中检测数百万亿微生物，分析速度可能比预期速度慢。通过改进后的、高级计算机系统（采用 Micron 美光内存设备）支持的人工智能技术，研究者可在几分钟内完成数年的人力工作（人力工作也并不一定能成功完成）。&lt;/p&gt;
+&lt;p&gt;为了使该样本分析更有意义，科学家需要数据库的辅助。美国国家卫生研究院的“&lt;a href=&#34;https://www.mesotheliomahelp.org/nih-all-of-us-program-may-guide-research-for-new-treatments-for-mesothelioma/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;我们所有人&lt;/a&gt;”计划旨在采集 100 多万人的数据，包括微生物组采样数据，以有助于更准确的医疗用途。美国国家卫生研究院的“&lt;a href=&#34;https://commonfund.nih.gov/hmp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;人类微生物组计划&lt;/a&gt;”（已停止）开展了许多关于肠道菌群对人类各方面健康作用的研究。目前很多其他项目正在进行中，希望可以实现以下目标：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;改善免疫系统。&lt;/strong&gt; 将微生物组看作免疫系统调节剂的这一观点已被广泛接受。从婴儿时期开始，肠道中的细菌就开始教我们的免疫系统“如何好好表现”（引用 &lt;a href=&#34;https://medicalxpress.com/news/2018-03-gut-bacteria-essential-healthy-immune.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ScienceNordic 中的一篇文章&lt;/a&gt;）。这些生物也会影响消化道和其他器官的炎症情况。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预防霍乱。&lt;/strong&gt; 来自杜克大学、麻省综合医院和孟加拉国达卡国际腹泻病研究中心的研究者正在通过&lt;a href=&#34;https://academic.oup.com/jid/article-abstract/218/4/645/4969495?redirectedFrom=fulltext&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;机器学习算法&lt;/a&gt;检测消化系统中的细菌群落活动模式 - 人类通过肉眼基本无法看到这些活动。由于并非所有接触霍乱的人都患上腹泻疾病，因此人工智能可以帮助研究人员了解其被研究者是否有风险及其原因。其还有助于疫苗的开发。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;药物相互作用。&lt;/strong&gt; 根据&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/29704918&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;美国国家医学图书馆摘要&lt;/a&gt;，我们认为微生物组的组成影响药物治疗的反应，以及某些药物的代谢程度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;老化。&lt;/strong&gt; 微生物组对健康老化的作用是加州大学圣地亚哥分校和 IBM 研究院的健康生活人工智能中心的研究重点之一。该中心研究遗传学、环境因素、日常生活习惯和人类微生物组对老年人认知能力的影响。现已证实，帕金森病和其他老龄疾病都与微生物组有关。该中心采用人工智能技术，筛选并分析抽样中提供的大量数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;肠道微生物组的应用前景&#34;&gt;肠道微生物组的应用前景&lt;/h3&gt;
+&lt;p&gt;最近的一项创新的研究性疗法是将粪便微生物群移植，并已经在临床试验中进行了测试，非常具有治疗前景。 在过去的5年里，CAS 内容合集每年收录约1000余篇与粪便移植相关的文献。 例如，据报道，粪便微生物群移植能够解决 80-90% 由对抗生素无反应的复发性艰难梭菌引起的感染。 粪便微生物群移植作为一系列疾病的潜在治疗手段急待探究，其临床试验的独特作用也正被越来越多地研究。 &lt;/p&gt;
+&lt;p&gt;目前，通过胃肠道微生物群调节肠脑轴的研究是一门新兴的创新前沿科学。 大部分可用数据是基于基础科学或动物模型，可能无法适用于有效的人类干预。 因此，特定的益生元化合物和益生菌的个体化处方，代表了理想的、个性化的营养方式和生活方式。 人们仍然对个体化处方充满希望。正在进行的进一步确定微生物组的功能和宿主-微生物的互作机制的努力，将使人们更好地了解微生物组在健康和疾病中的作用。&lt;/p&gt;
+&lt;h3 id=&#34;与致癌菌斗争到底&#34;&gt;与致癌菌斗争到底&lt;/h3&gt;
+&lt;p&gt;① 肠道微生物可产生破坏DNA的毒素以及致癌物质，引起促癌炎症反应，使肿瘤对化疗药物产生抗性，并抑制人体的抗癌免疫反应；② 常见的致癌菌有：引起胃癌的幽门螺旋杆菌，引起肠癌的特定脆弱拟杆菌和大肠杆菌菌株以及具核梭杆菌；③ 可发展针对特定致癌菌的药物、疫苗或噬菌体，在杀灭致癌菌的同时不影响有益菌；④ 粪菌移植安全性尚存疑，与直接采用捐赠者粪菌相比，移植经过设计的菌群更安全；⑤ 微生物疗法也需针对特定肿瘤类型进行定制。&lt;/p&gt;
+&lt;h3 id=&#34;工程菌有望成为新的活体疗法&#34;&gt;工程菌有望成为新的活体疗法&lt;/h3&gt;
+&lt;p&gt;① 利用合成生物学，单菌的定制改造已经初步实现，现在研究者希望实现工程菌多功能化，尤其是其检测性及对内环境的监测性；② 由工程菌和天然菌组成的关键菌群群落的定制和移植，是一种可以实现的、更好的方式，其困难在于菌落间的相互作用及其功能实现；③ 基于群体感应原理，工程菌的应用需要结合合成生物学与合成生态学观点；④ 鉴于肠道菌群的复杂性和宿主特异性，且“健康”菌群的定义尚不明确，工程菌的研究面临着极大挑战与机遇。&lt;/p&gt;
+&lt;h3 id=&#34;靶向菌群的饮食干预没那么简单&#34;&gt;靶向菌群的饮食干预，没那么简单&lt;/h3&gt;
+&lt;p&gt;① 不同菌群群落对健康的影响尚不确定：以短链脂肪酸（SCFA）为例，虽然膳食介导菌群增加SCFA产生，但是其与菌群及宿主的复杂相互作用并不清楚；② 菌群或代谢物除了受食物中宏量营养素影响外，还受其他成分、加工方式等影响，且其对健康的影响程度未知；③ 目前，有两种方式可以利用菌群数据：生物标志物的发现和靶向菌群的筛选，但是其应用也要结合其他方面的研究数据；④ 鉴于特定膳食难以长期依附，以菌群为靶点的药物应是未来研究方向。&lt;/p&gt;
 </description>
     </item>
     

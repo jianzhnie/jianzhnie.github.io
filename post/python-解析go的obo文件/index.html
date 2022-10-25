@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: 2022年10月25日 --><html lang="zh-Hans" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.16f785cdb553c8c4431db6775122af35.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.a5693e00993770ec38b7d5b7b107ddd1.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Robin" />
+
+
+
+
+
+  
+
+<meta name="description" content="GO的obo文件解析Python代码 介绍： 在现在的组学研究中" />
+
+
+
+<link rel="alternate" hreflang="zh-Hans" href="https://jianzhnie.github.io/post/python-%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6/" />
+<link rel="canonical" href="https://jianzhnie.github.io/post/python-%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary" />
+
+  <meta property="twitter:site" content="@wowchemy" />
+  <meta property="twitter:creator" content="@wowchemy" />
+<meta property="twitter:image" content="https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+<meta property="og:site_name" content="Robin 的个人主页" />
+<meta property="og:url" content="https://jianzhnie.github.io/post/python-%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6/" />
+<meta property="og:title" content="Python 解析go的obo文件 | Robin 的个人主页" />
+<meta property="og:description" content="GO的obo文件解析Python代码 介绍： 在现在的组学研究中" /><meta property="og:image" content="https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh-Hans" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2022-04-13T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2022-04-13T00:00:00&#43;00:00">
+  
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jianzhnie.github.io/post/python-%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6/"
+  },
+  "headline": "Python 解析go的obo文件",
+  
+  "datePublished": "2022-04-13T00:00:00Z",
+  "dateModified": "2022-04-13T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Robin"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Robin 的个人主页",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "GO的obo文件解析Python代码 介绍： 在现在的组学研究中"
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Python 解析go的obo文件 | Robin 的个人主页</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="8414e54ec5ee85ad6ba378bac5e60ac2" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+
+
+  <div class="page-header header--fixed">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Robin 的个人主页</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="切换导航">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Robin 的个人主页</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#tags"><span>Tags</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="https://twitter.com/robin_jianzh" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="https://twitter.com/robin_jianzh" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>浅色</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>深色</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>自动</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Python 解析go的obo文件</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      Robin</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    4月 13, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 分钟阅读时长
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h3 id="go的obo文件解析python代码">GO的obo文件解析Python代码</h3>
+<p><strong>介绍：</strong></p>
+<p>在现在的组学研究中几乎离不开GO分析，那么GO是干什么的呢，GO的诞生主要目的是来归类统一生物学方言的（不同的生物学数据库可能会使用不同的术语），它是一个有向无环图（DAG）本体,主要形式是一term标记，每个GO term代表一种功能描述，都属于ontology.</p>
+<p>而GO总共分成三个ontology:molecular function, cellular component 和biological process；</p>
+<p>在GO中GO term之间存在多种关系，常见的主要是 is_a 和 part_o f和两种关系，</p>
+<ul>
+<li>is_a：表示包含关系，如图中黑色箭头，需要强调的是“完全包含”；</li>
+<li>Part_of：表示一部分，如图蓝色箭头部分，简单的来说是A part_of_B意味着如果A出现，那么它就肯定是B的一部分或组成部分，但A不一定总会出现。比如叶绿体 part_of 细胞，叶绿体肯定是细胞的一部分，但有的细胞没有叶绿体。</li>
+</ul>
+<p><a href="https://www.shengxin.ren/image/show/attachments-2017-05-gTNS5jPL592d3f1a5bf07." target="_blank" rel="noopener">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://www.shengxin.ren/image/show/attachments-2017-05-gTNS5jPL592d3f1a5bf07." alt="attachments-2017-05-gTNS5jPL592d3f1a5bf0" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</a><strong>使用：</strong></p>
+<p>了解GO之后，怎么使用它是一个永远的话题，比如手头有一个基因序列但不知道它的功能，那么经常的做法是会进行GO注释，从 GO注释中来推断这个基因序列的功能，这篇文章主要是来分享一下对于GO的obo文件的解析的，obo文件是用来存储所有GO term关系的文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#encoding:utf-8</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">Created on 2017.5.29
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">@author: zhura
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">GOBase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">_id</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_id</span><span class="o">=</span><span class="n">_id</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">alt_ids</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">namespace</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">=</span><span class="kc">None</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="o">=-</span><span class="mi">1</span> 
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">allParents</span><span class="o">=</span><span class="kc">None</span> 
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ObOs</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="o">=</span><span class="n">path</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="o">=</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">parseObO</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">parseObO</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lines</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_goTxt</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">flag</span><span class="o">=</span><span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_goTxt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">flag</span> <span class="ow">and</span> <span class="n">line</span><span class="o">==</span><span class="s1">&#39;&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">parseGO</span><span class="p">(</span><span class="n">_goTxt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_goTxt</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">flag</span><span class="o">=</span><span class="kc">False</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;[Term]&#39;</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">flag</span><span class="o">=</span><span class="kc">True</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">parseGO</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">_goText</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_id</span><span class="o">=</span><span class="kc">None</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_name</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_namespace</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_is_as</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_alt_ids</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">_txt</span> <span class="ow">in</span> <span class="n">_goText</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;id:&#39;</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_id</span><span class="o">=</span><span class="n">_txt</span><span class="p">[</span><span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;GO&#39;</span><span class="p">):</span><span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;GO&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">10</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_name</span><span class="o">=</span><span class="n">_txt</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">_txt</span><span class="p">)]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;namespace:&#39;</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_namespace</span><span class="o">=</span><span class="n">_txt</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">_txt</span><span class="p">)]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;alt_id:&#39;</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_alt_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_txt</span><span class="p">[</span><span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;GO&#39;</span><span class="p">):</span><span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;GO&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">10</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;is_a:&#39;</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;relationship:&#39;</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_is_as</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_txt</span><span class="p">[</span><span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;GO&#39;</span><span class="p">):</span><span class="n">_txt</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;GO&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">10</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">_id</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_go</span><span class="o">=</span><span class="kc">None</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">_id</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_go</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">_id</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_go</span><span class="o">=</span><span class="n">GOBase</span><span class="p">(</span><span class="n">_id</span><span class="p">)</span>   
+</span></span><span class="line"><span class="cl">            <span class="n">_go</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="n">_name</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_go</span><span class="o">.</span><span class="n">namespace</span><span class="o">=</span><span class="n">_namespace</span>   
+</span></span><span class="line"><span class="cl">            <span class="n">_go</span><span class="o">.</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parseParent</span><span class="p">(</span><span class="n">_is_as</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_go</span><span class="o">.</span><span class="n">alt_ids</span><span class="o">=</span><span class="n">_alt_ids</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">_id</span><span class="p">]</span><span class="o">=</span><span class="n">_go</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_alt_ids</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">_alt</span> <span class="ow">in</span> <span class="n">_alt_ids</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">_alt</span><span class="p">]</span><span class="o">=</span><span class="n">_go</span> 
+</span></span><span class="line"><span class="cl">                               
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">parseParent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">is_as</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">__parent</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">isa</span> <span class="ow">in</span> <span class="n">is_as</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">isa</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cGo</span><span class="o">=</span><span class="n">GOBase</span><span class="p">(</span><span class="n">isa</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">isa</span><span class="p">]</span><span class="o">=</span><span class="n">cGo</span>
+</span></span><span class="line"><span class="cl">            <span class="n">__parent</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">isa</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">__parent</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getLevel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">_id</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_min</span><span class="o">=</span><span class="mi">100000</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_go</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">_id</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">_go</span><span class="o">.</span><span class="n">level</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">_go</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_go</span><span class="o">.</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">_go</span><span class="o">.</span><span class="n">parent</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">lev</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">getLevel</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">_min</span><span class="o">&gt;</span><span class="n">lev</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">_min</span><span class="o">=</span><span class="n">lev</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_go</span><span class="o">.</span><span class="n">level</span><span class="o">=</span><span class="n">_min</span><span class="o">+</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">_go</span><span class="o">.</span><span class="n">level</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getAllParent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">_id</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_prs</span><span class="o">=</span><span class="p">[</span><span class="n">_id</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_go</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">_id</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">_go</span><span class="o">.</span><span class="n">allParents</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">_go</span><span class="o">.</span><span class="n">allParents</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">_go</span><span class="o">.</span><span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">_go</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_go</span><span class="o">.</span><span class="n">allParents</span><span class="o">=</span><span class="n">_prs</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">_go</span><span class="o">.</span><span class="n">allParents</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">_go</span><span class="o">.</span><span class="n">parent</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">getAllParent</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_prs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_go</span><span class="o">.</span><span class="n">allParents</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">_prs</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">_go</span><span class="o">.</span><span class="n">allParents</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">obo</span><span class="o">=</span><span class="s1">&#39;D:/bgDB/go-basic.obo.txt&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ob</span><span class="o">=</span><span class="n">ObOs</span><span class="p">(</span><span class="n">obo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="n">ob</span><span class="o">.</span><span class="n">getAllParent</span><span class="p">(</span><span class="s1">&#39;GO:0004322&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="n">ob</span><span class="o">.</span><span class="n">getLevel</span><span class="p">(</span><span class="s1">&#39;GO:0004322&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="n">ob</span><span class="o">.</span><span class="n">getLevel</span><span class="p">(</span><span class="s1">&#39;GO:0003824&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         
+</span></span><span class="line"><span class="cl">    
+</span></span></code></pre></div>
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/python/">Python</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fpython-%25E8%25A7%25A3%25E6%259E%2590go%25E7%259A%2584obo%25E6%2596%2587%25E4%25BB%25B6%2F&amp;text=Python&#43;%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fpython-%25E8%25A7%25A3%25E6%259E%2590go%25E7%259A%2584obo%25E6%2596%2587%25E4%25BB%25B6%2F&amp;t=Python&#43;%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Python%20%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6&amp;body=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fpython-%25E8%25A7%25A3%25E6%259E%2590go%25E7%259A%2584obo%25E6%2596%2587%25E4%25BB%25B6%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fpython-%25E8%25A7%25A3%25E6%259E%2590go%25E7%259A%2584obo%25E6%2596%2587%25E4%25BB%25B6%2F&amp;title=Python&#43;%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Python&#43;%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6%20https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fpython-%25E8%25A7%25A3%25E6%259E%2590go%25E7%259A%2584obo%25E6%2596%2587%25E4%25BB%25B6%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fpython-%25E8%25A7%25A3%25E6%259E%2590go%25E7%259A%2584obo%25E6%2596%2587%25E4%25BB%25B6%2F&amp;title=Python&#43;%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      由<a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>支持发布——免费<a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">开源</a>网站，为创作者赋能。
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="/zh/js/wowchemy.min.b81c9d0315dc5c2eb807da97a2429254.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

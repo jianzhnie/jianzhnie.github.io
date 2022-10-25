@@ -2,34 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jianzhnie.github.io/tag/academic/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://jianzhnie.github.io/categories/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jianzhnie.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://jianzhnie.github.io/categories/"
-                />
-  </url><url>
-    <loc>https://jianzhnie.github.io/category/demo/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://jianzhnie.github.io/post/diamond/</loc>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://jianzhnie.github.io/post/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/tag/protein-%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/post/protein%E6%95%B0%E6%8D%AE%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/tag/python/</loc>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/post/python-%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://jianzhnie.github.io/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -43,7 +41,7 @@
                 />
   </url><url>
     <loc>https://jianzhnie.github.io/tags/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -56,16 +54,16 @@
                 href="https://jianzhnie.github.io/tags/"
                 />
   </url><url>
-    <loc>https://jianzhnie.github.io/post/getting-started/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://jianzhnie.github.io/tag/%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://jianzhnie.github.io/tag/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://jianzhnie.github.io/post/%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://jianzhnie.github.io/category/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://jianzhnie.github.io/tag/%E7%94%9F%E4%BF%A1/</loc>
+    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://jianzhnie.github.io/publication-type/3/</loc>
@@ -144,5 +142,18 @@
   </url><url>
     <loc>https://jianzhnie.github.io/admin/</loc>
     <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jianzhnie.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://jianzhnie.github.io/categories/"
+                />
   </url>
 </urlset>

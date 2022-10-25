@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: 2022年10月25日 --><html lang="zh-Hans" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.16f785cdb553c8c4431db6775122af35.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.a5693e00993770ec38b7d5b7b107ddd1.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Robin" />
+
+
+
+
+
+  
+
+<meta name="description" content="GO数据库： 官网及详细说明：http://geneontol" />
+
+
+
+<link rel="alternate" hreflang="zh-Hans" href="https://jianzhnie.github.io/post/protein%E6%95%B0%E6%8D%AE%E4%BB%8B%E7%BB%8D/" />
+<link rel="canonical" href="https://jianzhnie.github.io/post/protein%E6%95%B0%E6%8D%AE%E4%BB%8B%E7%BB%8D/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary" />
+
+  <meta property="twitter:site" content="@wowchemy" />
+  <meta property="twitter:creator" content="@wowchemy" />
+<meta property="twitter:image" content="https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+<meta property="og:site_name" content="Robin 的个人主页" />
+<meta property="og:url" content="https://jianzhnie.github.io/post/protein%E6%95%B0%E6%8D%AE%E4%BB%8B%E7%BB%8D/" />
+<meta property="og:title" content="Protein 数据库 | Robin 的个人主页" />
+<meta property="og:description" content="GO数据库： 官网及详细说明：http://geneontol" /><meta property="og:image" content="https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh-Hans" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2022-04-13T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2022-04-13T00:00:00&#43;00:00">
+  
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jianzhnie.github.io/post/protein%E6%95%B0%E6%8D%AE%E4%BB%8B%E7%BB%8D/"
+  },
+  "headline": "Protein 数据库",
+  
+  "datePublished": "2022-04-13T00:00:00Z",
+  "dateModified": "2022-04-13T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Robin"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Robin 的个人主页",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "GO数据库： 官网及详细说明：http://geneontol"
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Protein 数据库 | Robin 的个人主页</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="8d407fd7b6aec6ec262886f8c7005b35" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+
+
+  <div class="page-header header--fixed">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Robin 的个人主页</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="切换导航">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Robin 的个人主页</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#tags"><span>Tags</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="https://twitter.com/robin_jianzh" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="https://twitter.com/robin_jianzh" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>浅色</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>深色</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>自动</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Protein 数据库</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      Robin</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    4月 13, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    13 分钟阅读时长
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h3 id="go数据库">GO数据库：</h3>
+<p>官网及详细说明：<a href="https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttp%3A%2F%2Fgeneontology.org%2Fdocs%2Fdownload-ontology%2F" target="_blank" rel="noopener">http://geneontology.org/docs/download-ontology/</a>
+具体GO数据库的搭建参考Blast2go文章详解</p>
+<h3 id="kegg数据库">Kegg数据库：</h3>
+<p>KEGG（Kyoto Encyclopedia of Genes and Genomes）京都基因和基因组百科全书，是研究Pathway代谢通路的最主要数据库，整合了基因组信息、化学信息、系统信息及疾病和健康信息。</p>
+<h3 id="uniprot-数据库">UniProt 数据库：</h3>
+<p>Unified Protein Database（简称UniProt）是信息最丰富、资源最广的蛋白质序列数据库，含蛋白质序列，功能信息，研究论文索引等信息, 整合了包括EBI（ European Bioinformatics Institute），SIB（the Swiss Institute of Bioinformatics），PIR（Protein Information Resource）三大数据库的资源。</p>
+<p><strong>EBI（ European Bioinformatics Institute）：</strong></p>
+<p>欧洲生物信息学研究所（EMBL-EBI）是欧洲生命科学旗舰实验室EMBL的一部分。位于英国剑桥欣克斯顿的惠康基因组校内，是世界上基因组学领域最强的存在之一。</p>
+<p><strong>SIB（the Swiss Institute of Bioinformatics）：</strong></p>
+<p>瑞士日内瓦的SIB维护着ExPASy（专家蛋白质分析系统）服务器，这里包含有蛋白质组学工具和数据库的主要资源。</p>
+<p><strong>PIR（Protein Information Resource）：</strong></p>
+<p>PIR是美国国家生物医学研究基金会（NBRF）于1984年创立，旨在协助研究人员识别和解释蛋白质序列信息。</p>
+<p>Uniprot数据库主要子数据库组成：</p>
+<p>以上子数据库间的关系如下：Uniprot会收集EMBL，GenBank，DDBJ等公共数据库中的蛋白质序列及功能信息等原始数据，处理后存入UniParc的非冗余蛋白质序列数据库；UniPrc作为数据仓库，再分别给UniProtKB，Proteomes，UNIRef提供可靠的数据集，其中在UniProtKB数据库中Swiss-Prot是由TrEMBL经过手动注释后得到的高质量非冗余数据库，也是我们最常用的蛋白质数据库之一。</p>
+<p><a href="https://www.omicsclass.com/image/show/attachments-2022-01-QRiCJpWl61e81e76a783e.jpg" target="_blank" rel="noopener">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="Protein%20%E5%8A%9F%E8%83%BD%E6%B3%A8%E9%87%8A.assets/attachments-2022-01-QRiCJpWl61e81e76a783e.jpg" alt="attachments-2022-01-QRiCJpWl61e81e76a783e.jpg" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</a></p>
+<p>Uniprot数据库官方链接：https://www.uniprot.org/</p>
+<h4 id="uniprotkbswiss-prot"><strong>UniProtKB/Swiss-Prot</strong></h4>
+<p>高质量的、手工注释的、非冗余的数据集</p>
+<p>Swiss-Prot旨在提供与高水平注释（例如，蛋白质功能，其域结构，翻译后修饰，变体等的描述）相关的可靠蛋白质序列，最小程度的冗余和高水平与其他数据库的集成级别。注释主要来自文献中的研究成果和E-value校验过计算分析结果，有质量保证的数据才被加入该数据库 。</p>
+<p>Swiss-Prot由Amos Bairoch博士在1986年创建，由瑞士生物信息学研究所开发，随后由欧洲生物信息学研究所的Rolf Apweiler开发。也是说EBI和SIB共同制作了Swiss-Prot和TrEMBL数据库。</p>
+<p>Swiss-Prot条目的注释中使用了一系列序列分析工具。包括手动评估，计算机预测，并选择结果包含在相应的条目中。这些预测包括翻译后修饰，跨膜结构域和拓扑，信号肽，结构域识别和蛋白质家族分类。</p>
+<p>来自相同基因和相同物种的序列合并到相同的数据库条目中。确定序列之间的差异包含：可变剪接，自然变异，错误的起始位点，错误的外显子边界，移码，未识别的冲突。</p>
+<p>注释会用相关出版物通过搜索数据库（例如PubMed）进行识别。阅读每篇论文的全文，然后提取信息并将其添加到条目中。科学文献中的注释包括但不限于：</p>
+<ul>
+<li>蛋白质和基因名称</li>
+<li>功能</li>
+<li>特定于酶的信息，例如催化活性，辅因子和催化残基</li>
+<li>亚细胞定位</li>
+<li>蛋白质相互作用</li>
+<li>表达方式</li>
+<li>重要域和站点的位置和角色</li>
+<li>离子，底物和辅因子结合位点</li>
+<li>通过自然遗传变异，RNA编辑，替代剪接，蛋白水解加工和翻译后修饰产生的蛋白质变异形式</li>
+</ul>
+<h5 id="常用的操作"><strong>常用的操作</strong></h5>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="Protein%20%E5%8A%9F%E8%83%BD%E6%B3%A8%E9%87%8A.assets/v2-ba9fb31690e924c4bc509b198a3924cc_720w.jpg" alt="img" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>&lt;1&gt;：这里输入基因名，UniProt ID，或者感兴趣的关键字</p>
+<p>&lt;2&gt;：筛选：<strong>Reviewed</strong>：存储在Swiss-Prot数据库中经过验证的蛋白数据，<strong>Unreviewed</strong>：存储在TrEMBL数据库中没有经过验证的蛋白数据</p>
+<p>&lt;3&gt;：筛选某个物种，点击就好切换到该物种</p>
+<p>&lt;4&gt;：通过基因名或蛋白名来筛选</p>
+<p>&lt;5&gt;：依次是Unprot ID，该蛋白数据库命名，蛋白质名，基因名，物种，序列长</p>
+<p>&lt;6&gt;：如果需要Blast来查看某个蛋白有哪些序列相似的蛋白序列，先选中感兴趣蛋白前的方框，点击<code>Blast</code></p>
+<p>&lt;7&gt;：如果需要多序列比对，先选中感兴趣蛋白前的方框，点击<code>Align</code></p>
+<p>&lt;8&gt;：如果要下载信息，先选中感兴趣蛋白前的方框，点击<code>Download</code>下载。这里不选择序列，默认会下载全部序列</p>
+<p>下面以 <code>PO5F1_HUMAN</code> 为例，下载对应的fasta序列来看看：</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="Protein%20%E5%8A%9F%E8%83%BD%E6%B3%A8%E9%87%8A.assets/v2-4740580ba34951ab5fcd5baf7147b50c_720w.jpg" alt="img" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>下载到的序列：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">  <span class="o">&gt;</span><span class="n">sp</span><span class="o">|</span><span class="n">Q01860</span><span class="o">|</span><span class="n">PO5F1_HUMAN</span> <span class="n">POU</span> <span class="n">domain</span><span class="o">,</span> <span class="kd">class</span> <span class="nc">5</span><span class="o">,</span> <span class="n">transcription</span> <span class="n">factor</span> <span class="n">1</span> <span class="n">OS</span><span class="o">=</span><span class="n">Homo</span> <span class="n">sapiens</span> <span class="n">OX</span><span class="o">=</span><span class="n">9606</span> <span class="n">GN</span><span class="o">=</span><span class="n">POU5F1</span> <span class="n">PE</span><span class="o">=</span><span class="n">1</span> <span class="n">SV</span><span class="o">=</span><span class="n">1</span>
+</span></span><span class="line"><span class="cl">  <span class="n">MAGHLASDFAFSPPPGGGGDGPGGPEPGWVDPRTWLSFQGPPGGPGIGPGVGPGSEVWGI</span>
+</span></span><span class="line"><span class="cl">  <span class="n">PPCPPPYEFCGGMAYCGPQVGVGLVPQGGLETSQPEGEAGVGVESNSDGASPEPCTVTPG</span>
+</span></span><span class="line"><span class="cl">  <span class="n">AVKLEKEKLEQNPEESQDIKALQKELEQFAKLLKQKRITLGYTQADVGLTLGVLFGKVFS</span>
+</span></span><span class="line"><span class="cl">  <span class="n">QTTICRFEALQLSFKNMCKLRPLLQKWVEEADNNENLQEICKAETLVQARKRKRTSIENR</span>
+</span></span><span class="line"><span class="cl">  <span class="n">VRGNLENLFLQCPKPTLQQISHIAQQLGLEKDVVRVWFCNRRQKGKRSSSDYAQREDFEA</span>
+</span></span><span class="line"><span class="cl">  <span class="n">AGSPFSGGPVSFPLAPGPHFGTPGYGSPHFTALYSSVPFPEGEAFPPVSVTTLGSPMHSN</span>
+</span></span></code></pre></div><p>首先看 <code>&gt;</code> 后的注释信息</p>
+<ul>
+<li>
+<p><strong>sp</strong>：Swiss-Prot数据库的简称，也就是上面说的验证后的蛋白数据库</p>
+</li>
+<li>
+<p><strong>Q01860</strong>：UniProt ID号</p>
+</li>
+<li>
+<p><strong>PO5F1_HUMAN</strong>：是UniProt 的登录名</p>
+</li>
+<li>
+<p><strong>POU domain, class 5, transcription factor 1</strong>：蛋白质名称</p>
+</li>
+<li>
+<p><strong>OS=Homo sapiens</strong>：OS是Organism简称，Homo sapiens为人的拉丁文分类命名，也就是这是人的蛋白质</p>
+</li>
+<li>
+<p><strong>OX=9606</strong>：Organism Taxonomy，也就是物种分类数据库Taxonomy ID</p>
+</li>
+<li>
+<p><strong>GN=POU5F1</strong>：Gene name，基因名为POU5F1</p>
+</li>
+<li>
+<p><strong>PE=1</strong>：Protein Existence，蛋白质可靠性，对应5个数字，数字越小越可靠：</p>
+</li>
+<li>
+<ul>
+<li>1：Experimental evidence at protein level</li>
+<li>2：Experimental evidence at tranlevel</li>
+<li>3：Protein inferred from homology</li>
+<li>4：Protein predicted</li>
+<li>5：Protein uncertain</li>
+</ul>
+</li>
+<li>
+<p><strong>SV=1</strong>：Sequence Version，序列版本号</p>
+</li>
+</ul>
+<h4 id="uniprotkbtrembl"><strong>UniProtKB/TrEMBL</strong></h4>
+<p>在认识到序列数据的生成速度超过了Swiss-Prot的注释能力时，为了给不在Swiss-Prot中的那些蛋白质提供自动注释，UniProt创建了TrEMBL（翻译的EMBL核苷酸序列数据库）。在三大核酸数据库（EMBL-Bank/GenBank/DDBJ）中注释的编码序列都会被自动翻译并加入该数据库中。它也有来自PDB数据库的序列，以及Ensembl、Refeq和CCDS基因预测的序列。之前提到的PIR组织制作了蛋白质序列数据库（PIR-PSD）。</p>
+<h4 id="uniparc"><strong>UniParc</strong></h4>
+<p>UniProt Archive（UniParc）包含来自主要公共可用蛋白质序列数据库的所有蛋白质序列的非冗余数据集。蛋白质可能存在于几个不同的来源数据库中，并且在同一数据库中存在多个副本。 为了避免冗余，UniParc仅将每个唯一序列存储一次。 相同序列被合并，无论它们来自相同还是不同物种。 每个序列都有一个稳定且唯一的标识符（UPI），从而可以从不同的来源数据库中识别相同的蛋白质。</p>
+<p>UniParc仅包含蛋白质序列，没有注释。 UniParc条目中的数据库交叉引用允许从源数据库检索有关该蛋白质的更多信息。 当源数据库中的序列发生更改时，UniParc将跟踪这些更改，并记录所有更改的历史记录。</p>
+<h4 id="uniref"><strong>UniRef</strong></h4>
+<p>UniProt Reference Clusters（UniRef）：聚类序列可显著减小数据库大小，从而加快序列搜索的速度。用于计算的蛋白质序列来自UniProtKB和部分UniParc记录的序列。UniRef100序列将相同的序列和序列片段（来自任何生物）合并到一个UniRef条目中，用于显示代表性蛋白质的序列。 使用CD-HIT算法对UniRef100序列进行聚类，并构建UniRef90和UniRef50。UniRef90和UniRef50分别代表每个簇由与最长序列分别具有至少90％或50％序列同一性的序列组成。</p>
+<h3 id="cog直系同源蛋白数据库">COG直系同源蛋白数据库：</h3>
+<p>COG (蛋白质直系同源簇) 数据库是 NCBI 开发的用于同源蛋白注释的数据库，是将细菌、藻类和真核生物的21个完整基因组的编码蛋白，根据系统进化关系分类构建而成。通过鉴定蛋白与数据库的比对，可以很好的预测蛋白质的功能。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">wget -c ftp://ftp.ncbi.nih.gov/pub/COG/COG2014/data/* 
+</span></span></code></pre></div><ul>
+<li>
+<p>fun2003-2014.tab 保存了COG的分类信息，将所有的COG的功能分为了以下26个类别，每个类别用一个字母表示</p>
+</li>
+<li>
+<p>cognames2003-2014.tab 文件保存了COG的详细信息，包括编号，对应的分类，功能描述等信息</p>
+</li>
+<li>
+<p>cog2003-2014.csv 文件保存了蛋白和COG的对应关系</p>
+</li>
+<li>
+<p>prot2003-2014.fa.gz 保存了fasta格式的蛋白序列和注释信息，直接对蛋白序列文件构建索引blast比对。示例如下</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt;gi<span class="p">|</span>103485499<span class="p">|</span>ref<span class="p">|</span>YP_615060.1<span class="p">|</span> chromosomal replication initiation protein <span class="o">[</span>Sphingopyxis alaskensis RB2256<span class="o">]</span> 
+</span></span><span class="line"><span class="cl">MSGDAAALWPRVAEGLRRDLGARTFDHWLKPVRFADYCALSGVVTLETASRFSANWINERFGDRLELAWRQQLPAVRSVS VRGGVAATERAATLASVPLPTFDAPAAPAANPALLGFDP
+</span></span><span class="line"><span class="cl">RLSFDRFVVARSNILAANAARRMAMVERPQFNPLYLCSGTG QGKTHLLQAIAQDYAAAHPTATIILMSAEKFMLEFVGAMRGGDMMAFKARLRAADLLLLDDLQFVIGKNSTQEELLHT
+</span></span><span class="line"><span class="cl">ID DLMTAGKRLVVTADRPPAMLDGVEARLLSRLSGGLVADIEAPEDDLRERIIRQRLAAMPMVEVPDDVIAWLVKHFTRNIR ELEGALNKLLAYAALTGARIDLMLAEDRLAENVRSA
+</span></span><span class="line"><span class="cl">RPRITIDEIQRAVCAHYRLDRSDMSSKRRVRAVARPRQVAMYLA KELTPRSYPEIGRRFGGRDHSTVIHAVRTVEALRVADSELDAEIAAIRRSLNS 
+</span></span></code></pre></div><h3 id="kog数据库">KOG数据库：</h3>
+<p>“KOG”是Clusters of orthologous groups for eukaryotic complete genomes（真核生物蛋白相邻类的聚簇）的缩写。构成每个KOG的蛋白都是被假定为来自于一个祖先蛋白，并且因此或者是orthologs或者是paralogs。Orthologs是指来自于不同物种的由垂直家系（物种形成）进化而来的蛋白，并且典型的保留与原始蛋白有相同的功能。Paralogs是那些在一定物种中的来源于基因复制的蛋白，可能会进化出新的与原来有关的功能。数据库链接：<a href="https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dftp%3A%2F%2Fftp.ncbi.nih.gov%2Fpub%2FCOG%2FKOG%2Fkyva" target="_blank" rel="noopener">ftp://ftp.ncbi.nih.gov/pub/COG/KOG/kyva</a>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">wget -c ftp://ftp.ncbi.nih.gov/pub/COG/* 
+</span></span></code></pre></div><h3 id="eggnog数据库">EggNOG数据库：</h3>
+<p>EggNOG数据库是直源同系蛋白分组比对（evolutionary genealogy of genes: Non-supervised Orthologous Groups）数据库，由EMBL创建并维护，是对NCBI的COG数据库进行拓展，提供了不同分类水平蛋白的直系同源分组（Orthologous Groups，OG），包括真核物种、原核物种及病毒的数据信息。它扩展了COG数据库的分类方法，采用无监督聚类算法在全基因组范围内推导基因功能，更适用于谱系特征基因的分析。
+<strong>新版本EggNOG 5.0的主页地址：</strong><a href="https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttp%3A%2F%2Feggnog5.embl.de%2F%23%2Fapp%2Fhome" target="_blank" rel="noopener">http://eggnog5.embl.de/#/app/home</a></p>
+<p>新版本另一个改进是不再使用物种名称缩写，而是使用更加规范的NCBI Taxid来进行物种分类，对应的数据下载地址如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">http://eggnog5.embl.de/download/eggnog_5.0/per_tax_level/
+</span></span></code></pre></div><p>下载数据：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">wget -c http://eggnog5.embl.de/download/eggnog_5.0/e5.proteomes.faa
+</span></span><span class="line"><span class="cl">wget -c http://eggnog5.embl.de/download/eggnog_5.0/e5.taxid_info.tsv 
+</span></span><span class="line"><span class="cl">wget -c http://eggnog5.embl.de/download/eggnog_5.0/e5.og_annotations.tsv 
+</span></span></code></pre></div><p>其中e5.proteomes.faa为所有的蛋白组序列，e5.taxid_info.tsv为Taxid对应的物种名称以及完整的谱系信息，e5.og_annotations.tsv为所有的NOG group信息，其第一列为Taxid，第二列为NOG groups，第三列为COG归属，第四列为Function。
+但现在我们还不能完成注释，必须需要蛋白序列id与NOG group的对应信息，这个信息在per_tax_level下不同taxonomy level的members.tsv文件中，我们将下载好的所有物种的members.tsv文件合并。
+members.tsv有五列（如下所示），其中第一列为Taxid，因为我们下载的是细菌bacteria所以第一列均为2，第二列为NOG group，第三列为该NOG group所包含的蛋白序列数目，第四列为该NOG group所包含的物种数目，第五列为该NOG group所包含的蛋白序列id，第六列为该NOG group所包含的物种的Taxid。结合该members.tsv文件与前面的e5.og_annotations.tsv，就可知道比对上的蛋白序列所属的NOG group、COG categories、Function。</p>
+<h3 id="pfam数据库">Pfam数据库：</h3>
+<p>Pfam数据库是蛋白质家族的数据库，根据多序列比对结果和隐马尔可夫模型，将蛋白质分为不同的家族。网址如下： <a href="https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttp%3A%2F%2Fpfam.xfam.org%2F" target="_blank" rel="noopener">http://pfam.xfam.org/</a></p>
+<ol>
+<li>安装HMMer</li>
+<li>从<a href="https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dftp%3A%2F%2Fftp.ebi.ac.uk%2Fpub%2Fdatabases%2FPfam%2Freleases%2F" target="_blank" rel="noopener">ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/</a>下载pfam数据库Pfam-A.hmm</li>
+<li>得到 PFAM 数据库的 HMM 文件。 HMM 文件是文本文件，需要将其变成二进制格式，以加快运算速度，同时进行压缩，并建立成索引数据库。 命令：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">hmmpress Pfam-A.hmm  
+</span></span></code></pre></div><ol>
+<li>使用 hmmscan 进行 Pfam 注释示例：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">hmmscan -o out.txt --tblout out.tbl --noali -E 1e-5 Pfam-A.hmm file.fasta 
+</span></span></code></pre></div><p>附 hmmscan [-options]几个主要选项含义</p>
+<blockquote>
+<p>-h 显示帮助信息 -o FILE 将结果输出到指定的文件中。默认是输出到标准输出。
+&ndash;tblout FILE 将蛋白质家族的结果以表格形式输出到指定的文件中。默认不输出该文件。
+&ndash;domtblout FILE 将蛋白结构域的比对结果以表格形式输出到指定的文件中。默认不输出该文件。该表格中包含query序列起始结束位点与目标序列起始结束位点的匹配信息。
+&ndash;acc 在输出结果中包含 PF 的编号，默认是蛋白质家族的名称。
+&ndash;noali 在输出结果中不包含比对信息。输出文件的大小则会更小。
+-E FLOAT default:10.0 设定 E_value 阈值，推荐设置为 1e-5 。
+-T FLOAT 设定 Score 阈值。
+&ndash;domE FLOAT default:10.0 设定 E_value 阈值。该参数和 -E 参数类似，不过是 domain 比对设定的值。</p>
+</blockquote>
+<h3 id="string数据库">String数据库：</h3>
+<p>STRING数据库（<a href="https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttps%3A%2F%2Fstring-db.org%2F" target="_blank" rel="noopener">https://string-db.org/</a>）是一个搜寻已知蛋白质之间和预测蛋白质之间相互作用关系的系统。这种作用关系既可以是蛋白质之间的物理作用，也可以是间接的功能相关性。它基于染色体临近、系统进化谱、基因融合和基因芯片数据等生物学信息来计算基因或者蛋白的共表达。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">wget -c https://stringdb-static.org/download/protein.links.v11.0.txt.gz #protein network data (scored links between proteins) 
+</span></span><span class="line"><span class="cl">wget -c https://stringdb-static.org/download/protein.actions.v11.0.txt.gz #interaction types for protein links  
+</span></span><span class="line"><span class="cl">perl data_extract_by_ids.pl -idfile ../Nr/Archaea.list -destfile protein.actions.v11.0.change.txt -out Archaea.actions.v11.0.change.txt &amp; 
+</span></span><span class="line"><span class="cl">perl data_extract_by_ids.pl -idfile ../Nr/Archaea.list -destfile protein.links.v11.0.change.txt -out Archaea.links.v11.0.txt &amp; 
+</span></span><span class="line"><span class="cl">perl data_extract_by_ids.pl -idfile ../Nr/Bacteria.list -destfile protein.actions.v11.0.change.txt -out Bacteria.actions.v11.0.change.txt &amp;
+</span></span><span class="line"><span class="cl">perl data_extract_by_ids.pl -idfile ../Nr/Bacteria.list -destfile protein.links.v11.0.change.txt -out Bacteria.links.v11.0.txt &amp; 
+</span></span><span class="line"><span class="cl">perl data_extract_by_ids.pl -idfile ../Nr/Eukaryota.list -destfile protein.actions.v11.0.change.txt -out Eukaryota.actions.v11.0.change.txt 
+</span></span><span class="line"><span class="cl">perl data_extract_by_ids.pl -idfile ../Nr/Eukaryota.list -destfile protein.links.v11.0.change.txt -out Eukaryota.links.v11.0.txt &amp; 
+</span></span></code></pre></div><p><strong>10.1. 动物转录因子数据AnimalTFDB3.0简介</strong></p>
+<p>动物转录因子数据库AnimalTFDB3.0]对97个动物基因组的转录因子（Transcription Factor）和转录辅助因子（Transcription cofactor）进行了归纳整理。基于DNA结合结构域，将动物转录因子分成了73个基因家族，将转录辅助因子分成了83个基因家族。此外，动物转录因子分为六大类（Basic Domain Group、Zinc-Coordinating Group、Beta-Scaffold Factors、Helix-turn-helix、Other Alpha-Helix Group和Unclassified Structure），动物转录辅助因子也分为六大类（Co-activator/repressors、Chromatin Remodeling Factors、General Cofactors、Histone-modifying Enzymes、Cell Cycle和Other Cofactors）。
+动物转录因子数据库AnimalTFDB3.0提供了[网页工具] 进行转录因子分析。该网页工具一次仅支持上传不超过1000条蛋白序列，不利于动物全基因组的转录因子分析。以下讲解下载AnimalTFDB3.0数据库FASTA文件，并自行编写程序进行转录因子和转录辅助因子注释。</p>
+<ol>
+<li>下载14个hmm文件并合并</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">wget -c http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/hmm/* 
+</span></span></code></pre></div><ol>
+<li>下载97个物种的蛋白序列、转录因子、转录辅助因子、转录辅助因子序列</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">wget http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/Ailuropoda_melanoleuca_TF_protein.fa 
+</span></span><span class="line"><span class="cl">wget http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/Ailuropoda_melanoleuca_TF 
+</span></span><span class="line"><span class="cl">wget http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/Ailuropoda_melanoleuca_TF_cofactors 
+</span></span><span class="line"><span class="cl">wget http://bioinfo.life.hust.edu.cn/static/AnimalTFDB3/download/Ailuropoda_melanoleuca_Cof_protein.fa  
+</span></span></code></pre></div><p><strong>参考：</strong>[http://www.chenlianfu.com/?p=2759]</p>
+<p><strong>10.2. 植物转录因子数据AnimalTFDB3.0简介</strong>
+PlnTFDB [http://plntfdb.bio.uni-potsdam.de/v3.0/] 是一个植物转录因子数据库，该数据库收录了大部分植物模式物种，包括拟南芥，水稻等20个物种的84个转录因子家族，包含28193 protein models, 26184 distinct protein sequences。它支持在线blast进行比对，也可以将数据下载后进行本地blast。
+<strong>分析工具：iTAK</strong> :[http://itak.feilab.net/cgi-bin/itak/index.cgi]</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">wget ftp://itak.feilab.net/pub/program/itak/old/iTAK-1.7.tar.gz 
+</span></span></code></pre></div><p>软件内部内置了PlantTFDB的数据库数据，可以直接用于预测植物转录因子，使用方法非常简单，只需要输入您需要鉴定的蛋白序列fasta格式即可。</p>
+<p>其中classification.txt就是我们得到的植物转录因子预测结果：</p>
+<ol>
+<li>alignment.txt：输入序列和数据库比对结果</li>
+<li>classification.txt：输入序列鉴定结果，ID 1：输入序列，ID 2：Family 鉴定的家族名称</li>
+<li>Type Family 类型，包含 TF，TR，PK TF: transcription factors TR: transcription regulator PK: protein kinases.</li>
+<li>Sequence.fasta：输入序列比对上家族的氨基酸序列</li>
+</ol>
+<p><strong>10.3. 真菌转录因子数据库Fungal TFDB简介</strong>
+真菌转录因子数据库Fungal TFDB1.2([http://ftfd.snu.ac.kr/index.php?a=view])
+对249个真菌（包含6个卵菌）基因组的转录因子和228个非真菌系的转录因子进行了归纳整理。基于转录因子家族分类，共获得61个家族，包含18563个真菌转录因子序列。</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/protein-%E6%95%B0%E6%8D%AE%E5%BA%93/">Protein 数据库</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fprotein%25E6%2595%25B0%25E6%258D%25AE%25E4%25BB%258B%25E7%25BB%258D%2F&amp;text=Protein&#43;%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fprotein%25E6%2595%25B0%25E6%258D%25AE%25E4%25BB%258B%25E7%25BB%258D%2F&amp;t=Protein&#43;%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Protein%20%E6%95%B0%E6%8D%AE%E5%BA%93&amp;body=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fprotein%25E6%2595%25B0%25E6%258D%25AE%25E4%25BB%258B%25E7%25BB%258D%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fprotein%25E6%2595%25B0%25E6%258D%25AE%25E4%25BB%258B%25E7%25BB%258D%2F&amp;title=Protein&#43;%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Protein&#43;%E6%95%B0%E6%8D%AE%E5%BA%93%20https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fprotein%25E6%2595%25B0%25E6%258D%25AE%25E4%25BB%258B%25E7%25BB%258D%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fprotein%25E6%2595%25B0%25E6%258D%25AE%25E4%25BB%258B%25E7%25BB%258D%2F&amp;title=Protein&#43;%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      由<a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>支持发布——免费<a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">开源</a>网站，为创作者赋能。
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="/zh/js/wowchemy.min.b81c9d0315dc5c2eb807da97a2429254.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

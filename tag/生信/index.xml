@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>生信 | Robin 的个人主页</title>
+    <link>https://jianzhnie.github.io/tag/%E7%94%9F%E4%BF%A1/</link>
+      <atom:link href="https://jianzhnie.github.io/tag/%E7%94%9F%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" />
+    <description>生信</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>生信</title>
+      <link>https://jianzhnie.github.io/tag/%E7%94%9F%E4%BF%A1/</link>
+    </image>
+    
+    <item>
+      <title>Diamond</title>
+      <link>https://jianzhnie.github.io/post/diamond/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://jianzhnie.github.io/post/diamond/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;将序列比对到nt、nr、uniprot、pfam等数据库是常有的事，blast无疑是最常用的比对软件，但是它的速度一直提不起来，非常耗费时间。估计比对等不到blast的结果了，于是想到了另一款软件Diamond&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;diamond简介&#34;&gt;Diamond简介&lt;/h2&gt;
+&lt;p&gt;序列比对软件，能输出与BLAST类似的结果，但是速度快了数百倍。&lt;/p&gt;
+&lt;p&gt;对于长序列，支持Frameshift alignments；&lt;/p&gt;
+&lt;p&gt;占用资源更少，但只是相对blast来讲；&lt;/p&gt;
+&lt;p&gt;自定义多种输出格式&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;记得引用：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Buchfink B, Xie C, Huson DH, “Fast and sensitive protein alignment using DIAMOND”, &lt;em&gt;Nature Methods&lt;/em&gt; &lt;strong&gt;12&lt;/strong&gt;, 59-60 (2015). &lt;a href=&#34;https://doi.org/10.1038/nmeth.3176&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;doi:10.1038/nmeth.3176&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;diamond使用&#34;&gt;Diamond使用&lt;/h2&gt;
+&lt;p&gt;还是conda安装好diamond，说明书在此：https://github.com/bbuchfink/diamond/raw/master/diamond_manual.pdf&lt;/p&gt;
+&lt;h3 id=&#34;第一步-准备数据集&#34;&gt;第一步: 准备数据集&lt;/h3&gt;
+&lt;p&gt;先从NCBI上下载蛋白数据库。 NR库是NCBI的非冗余蛋白数据库，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gunzip nr.gz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;第二步-建库&#34;&gt;第二步: 建库&lt;/h3&gt;
+&lt;p&gt;就两个参数，&lt;code&gt;--in nr&lt;/code&gt;输入文件，&lt;code&gt;--db nr&lt;/code&gt; 输出的数据库前缀&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diamond makedb --in nr.faa -db nr -p &lt;span class=&#34;m&#34;&gt;20&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最近下载了一个nr数据库，解压完是110G，命名为nr.faa.&lt;/p&gt;
+&lt;p&gt;结果会生成一个nr.dmnd的索引文件&lt;/p&gt;
+&lt;p&gt;我用了20核构建了110G的nr数据库，用时5726.56s，作为参考&lt;/p&gt;
+&lt;p&gt;Pfam数据库7.1G，24核用时190.931s，还是非常快的&lt;/p&gt;
+&lt;p&gt;附带数据库下载地址：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nr&lt;/strong&gt;：http://mirrors.vbi.vt.edu/mirrors/ftp.ncbi.nih.gov/blast/db/FASTA/nr.gz&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pfam&lt;/strong&gt;：ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/Pfam-A.fasta.gz&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Uniprot:&lt;/strong&gt; &lt;a href=&#34;ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz&#34;&gt;ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第三步-搜索&#34;&gt;第三步: 搜索&lt;/h3&gt;
+&lt;p&gt;就两个子命令，blastp和blastx，前者比对蛋白，后者比对DNA序列&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 因为要将核酸序列比对到蛋白库，因此使用blastx功能&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diamond blastx -d nr -q reads.fna -o nr.matches
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;默认输出格式是BLAST的tab结果，&lt;code&gt;-o&lt;/code&gt;指定输出文件名&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-q/ &amp;ndash;query输入检索序列&lt;/li&gt;
+&lt;li&gt;&amp;ndash;out/ -o输出文件，默认以&amp;ndash;outfmt 6输出结果和BLAST+的&amp;ndash;outfmt 6结果一致。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;需要注意的是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这个过程需要消耗大量的内存与硬盘（用于存放临时文件），如果资源不够，可以设置&lt;code&gt;-b&lt;/code&gt;参数调整&lt;/li&gt;
+&lt;li&gt;默认的比对模式（fast模式）是针对短序列的，如果要比对的序列比较长，建议使用sensitive模式，设置&lt;code&gt;—sensitive&lt;/code&gt;或者&lt;code&gt;--more-sensitive&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行时间不与比对文件大小成正比，相反，文件越大（比如大于1M reads）比对速度越快&lt;/li&gt;
+&lt;li&gt;比对结果中的X表示Masked residues&lt;/li&gt;
+&lt;li&gt;默认的阈值是0.001而Blast是10，相比之下，diamond比对更严格，得到的weak hits会更少&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,2 +1,2 @@
 # jianzhnie.github.io
-Robin's Personal Site， Website data build from  `https://github.com/jianzhnie/robin-academic-blog` .
+Hello, this Robin's Personal Site, [https://jianzhnie.github.io](https://jianzhnie.github.io). Website data build from  `https://github.com/jianzhnie/robin-academic-blog` .

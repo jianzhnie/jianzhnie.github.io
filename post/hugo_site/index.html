@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: 2022年10月25日 --><html lang="zh-Hans" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.16f785cdb553c8c4431db6775122af35.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.a5693e00993770ec38b7d5b7b107ddd1.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Robin" />
+
+
+
+
+
+  
+
+<meta name="description" content="使用 Hugo 搭建博客 Hugo 是用 Go 实现的博客工具，采用 Markdown 进行文章编辑，自" />
+
+
+
+<link rel="alternate" hreflang="zh-Hans" href="https://jianzhnie.github.io/post/hugo_site/" />
+<link rel="canonical" href="https://jianzhnie.github.io/post/hugo_site/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary_large_image" />
+
+  <meta property="twitter:site" content="@wowchemy" />
+  <meta property="twitter:creator" content="@wowchemy" />
+<meta property="twitter:image" content="https://jianzhnie.github.io/post/hugo_site/featured.png" />
+<meta property="og:site_name" content="Robin 的个人主页" />
+<meta property="og:url" content="https://jianzhnie.github.io/post/hugo_site/" />
+<meta property="og:title" content="Hugo &#43; Github Pages 搭建个人博客 | Robin 的个人主页" />
+<meta property="og:description" content="使用 Hugo 搭建博客 Hugo 是用 Go 实现的博客工具，采用 Markdown 进行文章编辑，自" /><meta property="og:image" content="https://jianzhnie.github.io/post/hugo_site/featured.png" /><meta property="og:locale" content="zh-Hans" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2022-10-22T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2022-10-22T00:00:00&#43;00:00">
+  
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jianzhnie.github.io/post/hugo_site/"
+  },
+  "headline": "Hugo + Github Pages 搭建个人博客",
+  
+  "image": [
+    "https://jianzhnie.github.io/post/hugo_site/featured.png"
+  ],
+  
+  "datePublished": "2022-10-22T00:00:00Z",
+  "dateModified": "2022-10-22T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Robin"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Robin 的个人主页",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "使用 Hugo 搭建博客 Hugo 是用 Go 实现的博客工具，采用 Markdown 进行文章编辑，自"
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Hugo &#43; Github Pages 搭建个人博客 | Robin 的个人主页</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="54648b625c8800a7ff275ab18d735d30" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+
+
+  <div class="page-header header--fixed">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Robin 的个人主页</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="切换导航">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Robin 的个人主页</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#tags"><span>Tags</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="https://github.com/jianzhnie" data-toggle="tooltip" data-placement="bottom" title="Follow me on Github" target="_blank" rel="noopener" aria-label="Follow me on Github">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>浅色</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>深色</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>自动</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Hugo &#43; Github Pages 搭建个人博客</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      Robin</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    10月 22, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    10 分钟阅读时长
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header container featured-image-wrapper mt-4 mb-4" style="max-width: 290px; max-height: 174px;">
+  <div style="position: relative">
+    <img src="/post/hugo_site/featured_huf952fbe354b461286e119fed8b89ee02_4417_1200x2500_fit_q75_h2_lanczos_3.webp" width="290" height="174" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="使用-hugo-搭建博客">使用 Hugo 搭建博客</h2>
+<p><a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 是用 Go 实现的博客工具，采用 Markdown 进行文章编辑，自动生成静态站点文件，支持丰富的主题配置，也可以通过 js 嵌入像是评论系统等插件，高度定制化。除了 Hugo 外， 还有 Gatsby、Jekyll、Hexo、Ghost 等选择，实现和使用都差不多，可以根据自己的偏好进行选择。</p>
+<h3 id="安装-hugo">安装 Hugo</h3>
+<p>我使用的是 macOS，所以使用官方推荐的 homebrew 方式进行 hugo 程序的安装，其他系统也类似。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install hugo
+</span></span></code></pre></div><p>完成后，使用以下命令进行验证：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo version
+</span></span></code></pre></div><h3 id="创建-hugo-网站">创建 Hugo 网站</h3>
+<p>通过上述命令安装 hugo 程序后，就可以通过 <code>hugo new site</code> 命令进行网站创建、配置与本地调试了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo new site robin-site
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Congratulations! Your new Hugo site is created in /Users/jianzhengnie/work_dir/personal_home/robin-site.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Just a few more steps and you<span class="err">&#39;</span>re ready to go:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1. Download a theme into the same-named folder.
+</span></span><span class="line"><span class="cl">   Choose a theme from https://themes.gohugo.io/ or
+</span></span><span class="line"><span class="cl">   create your own with the <span class="s2">&#34;hugo new theme &lt;THEMENAME&gt;&#34;</span> command.
+</span></span><span class="line"><span class="cl">2. Perhaps you want to add some content. You can add single files
+</span></span><span class="line"><span class="cl">   with <span class="s2">&#34;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;</span>.
+</span></span><span class="line"><span class="cl">3. Start the built-in live server via <span class="s2">&#34;hugo server&#34;</span>.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Visit https://gohugo.io/ <span class="k">for</span> quickstart guide and full documentation.
+</span></span></code></pre></div><p><em>注：后续命令未经说明，均在cmd中的robin-site根目录下运行</em></p>
+<p>创建完成后，根目录 robin-site 包含以下文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── archetypes: default.md是生成博文的模版
+</span></span><span class="line"><span class="cl">├── assets <span class="c1"># 存放被 Hugo Pipes 处理的文件</span>
+</span></span><span class="line"><span class="cl">├── content <span class="c1"># 存放markdown文件作为博文内容</span>
+</span></span><span class="line"><span class="cl">├── data <span class="c1"># 存放 Hugo 处理的数据</span>
+</span></span><span class="line"><span class="cl">├── layouts <span class="c1"># 存放布局文件</span>
+</span></span><span class="line"><span class="cl">├── static <span class="c1"># 存放静态文件 图片 CSS JS文件</span>
+</span></span><span class="line"><span class="cl">├── themes: 存放不同的主题
+</span></span><span class="line"><span class="cl">└── config.toml: 博客配置文件支持 JSON YAML TOML 三种格式配置文件
+</span></span></code></pre></div><h3 id="配置主题">配置主题</h3>
+<p>当通过上文命令创建我们的站点后，需要进行主题配置，Hugo 社区有了很丰富的主题，可以通过官网 <a href="https://themes.gohugo.io/" target="_blank" rel="noopener">Themes</a> 菜单选择自己喜欢的风格，查看预览效果，选择后可以进入主题项目仓库，一般都会有很详细的安装及配置说明。</p>
+<p>官方主题网站: <a href="https://themes.gohugo.io/" target="_blank" rel="noopener">https://themes.gohugo.io/</a></p>
+<p>主题推荐:</p>
+<ul>
+<li>Pure: <a href="https://themes.gohugo.io/hugo-theme-pure/" target="_blank" rel="noopener">https://themes.gohugo.io/hugo-theme-pure/</a></li>
+</ul>
+<h4 id="关联主题仓库">关联主题仓库</h4>
+<p>我们可以将主题仓库直接 <code>git clone</code> 下来进行使用，例如在根目录robin-site下运行以下代码，即可下载pure主题.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone https://github.com/xiaoheiAh/hugo-theme-pure themes/pure
+</span></span></code></pre></div><p>这种方式有一些弊端，当之后自己对主题进行修改后，可能会与原主题产生一些冲突，不方便版本管理与后续更新。官方更推荐使用的是将原主题仓库 <code>fork</code> 到自己的账户，并使用 <code>git submodule</code> 方式进行仓库链接，这样后续可以对主题的修改进行单独维护。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span>  robin-site/
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git submodule add https://github.com/pseudoyu/pure themes/pure
+</span></span></code></pre></div><p>然后在根目录下的 <code>config.toml</code>文件中添加新的一行:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">theme</span> <span class="o">=</span> <span class="s2">&#34;pure&#34;</span>
+</span></span></code></pre></div><h4 id="更新主题">更新主题</h4>
+<p>如果是 clone 了其他人的博客项目进行修改，则需要用以下命令进行初始化：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git submodule update --init --recursive
+</span></span></code></pre></div><p>如果需要同步主题仓库的最新修改，需要运行以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git submodule update --remote
+</span></span></code></pre></div><h3 id="新建博文">新建博文</h3>
+<p>完成后，可以通过 <code>hugo new</code> 命令发布新文章。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/test.md
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;Test&#34;
+</span></span><span class="line"><span class="cl">date: 2022-10-21T19:00:43+08:00
+</span></span><span class="line"><span class="cl">draft: true
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><p>这个命令会在 <code>content</code> 目录下建立 <code>post</code> 目录，并在 <code>post</code> 下生成 <code>test.md</code> 文件，博文书写就在这个文件里使用 Markdown 语法完成。博文的 front matter 里<code>draft</code> 选项默认为 <code>true</code>，需要改为 <code>false</code> 才能发表博文，建议直接更改上面说的<code>archetypes</code> 目录下的 <code>default</code> 文件，把 <code>draft: true</code> 改为 <code>draft: false</code>，这样生成的博文就是默认可以发表的。</p>
+<h3 id="生成网页">生成网页</h3>
+<p>为了查看生成的博客的效果，我们在本地编辑调试时可以通过 <code>hugo server</code> 命令进行本地实时调试预览，无须每次都重新生成。在cmd中运行以下命令，即我们可以通过浏览器  http://localhost:1313/ 地址访问我们的本地预览网页。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo server -D
+</span></span></code></pre></div><p>但此时只能在本地访问，如果想发布到 <code>Github Pages</code> ， 还需要借助 GithubPages 工具。</p>
+<h3 id="配置文件"><strong>配置文件</strong></h3>
+<p>打开配置config.toml可以看到很多的参数可以配置，这里只描述最基本的内容，不同的主题可能会支持不同的参数配置，具体请看对应主题的说明文档。baseURL是站点的域名。title是站点的名称。theme是站点的主题。还有关于评论和打赏的相关配置，这些配置都可以参考官网主题的说明。</p>
+<p>每次发布的时候，都需要先执行hugo，把新写的文档按照主题进行渲染，所有生成的文件默认都在当前pulic的子目录下，可以在config里面配置到其他目录。然后把所有新的文件提交到github。提交代码之后，要等一段时间才生效。</p>
+<h2 id="github-pages-发布博客">GitHub Pages 发布博客</h2>
+<p>我们希望 Hugo 生成的静态网站能通过 GitHub Pages 服务进行托管，而无需自己维护服务，更稳定、安全，因此我们需要上传 Hugo 生成的静态网页文件至 GitHub Page 项目仓库。</p>
+<h3 id="github-pages-到底是在做什么"><strong>Github Pages 到底是在做什么？</strong></h3>
+<p>A：Github Pages 本质上是一个静态网站托管系统，你可以使用它为你的每一个仓库制作一个静态网页入口。</p>
+<p>它有两种存在方式：</p>
+<ol>
+<li>识别 master branch 根目录下的：<a href="">README.md</a> 或者 index.html</li>
+<li>识别 master branch 的 /docs 目录下的：<a href="">README.md</a> 或者 index.html</li>
+</ol>
+<p>也就是说：我们可以把我们的静态网页直接存在 master branch，并在 Github Repository 的 Setting 页中打开 Github Pages 选项，就可以通过一个域名访问到我们的想要的网站了。</p>
+<h3 id="实战操作部署-hugo-作为一个-github-pages">实战操作：部署 Hugo 作为一个 Github Pages</h3>
+<blockquote>
+<p>将 Hugo 部署为 Github Pages 项目，并使用简单的 shell 脚本自动化整个过程</p>
+</blockquote>
+<p>第一步： <strong>创建一个 Github 仓库</strong></p>
+<ol>
+<li>登录后，点击右上角，出现下拉菜单，点击 Your repositories 进入页面</li>
+<li>点击 New</li>
+<li>进入 Creat a new repository 页面</li>
+<li><code>Repository name</code> 这里一定要填 <code>[你的github帳號].github.io</code>，像我的帳號是 <code>jianzhnie</code>，所以我就要輸入 <code>jianzhnie.github.io</code>，然後按 <code>[Create Repository]</code> 。</li>
+</ol>
+<p>第二步：创建新文章</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">hugo new posts/my-first-post.md
+</span></span></code></pre></div><p>这里面值得注意的是，通过上述命令行创建的文章中，会自动生成一部分文本如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;My First Post&#34;
+</span></span><span class="line"><span class="cl">date: 2019-03-26T08:47:11+01:00
+</span></span><span class="line"><span class="cl">draft: true
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><p>我们需要把 draft : true 修改成 draft : false 才可以上传这篇文章</p>
+<p>第三步：<strong>修改配置文件 config.toml</strong></p>
+<p>站点目录**<code>config.toml</code><strong>中</strong><code>baseURL</code>**要换成自己建立的仓库，如baseURL = “https://jianzhnie.github.io/&quot;</p>
+<p>第四步： 进入<strong>站点根目录</strong>下，执行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>执行后，站点根目录下会生成一个 <code>public</code> 文件夹，该文件下的内容即Hugo生成的整个静态网站。每次更新内容后，将 pubilc 目录里所有文件 push到GitHub即可。</p>
+<p>第五步：上传代码至 master</p>
+<p>首次使用的时候要执行以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> public
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git remote add origin https://github.com/jianzhnie/jianzhnie.github.io.git <span class="c1"># 将本地目录链接到远程服务器的代码仓库</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;[介绍，随便写点什么，比如日期]&#34;</span>
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span></code></pre></div><p>稍等几分钟即可通过我们的自定义域名来访问我们的博客站点了，和我们 <code>hugo server</code> 本地调试完全一致。</p>
+<p>以后每次<strong>站点目录</strong>下执行 <code>hugo</code> 命令后，再到<code>public</code>下执行推送命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git add -A
+</span></span><span class="line"><span class="cl">git commit -m &#34;[介绍，随便写点什么，比如日期]&#34;
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span></code></pre></div><h2 id="用-github-的-gh-pages-分支展示自己的项目">用 Github 的 gh-pages 分支展示自己的项目</h2>
+<p>上根据上面的教程， 我们可以 创建个人的博客网站，如 <code>https://jianzhnie.github.io</code>, 这个网站一般是作为个人博客或者学术主页，如果我们还有其他项目需要展示， 如项目文档，产品文档，学习笔记等， 那这个主页就不够用了。</p>
+<p>下面介绍一种解决方案，用 Github 的 gh-pages 分支展示自己的项目。Github创建项目仓库后随即只产生一个master分支，只需要再添加<code>gh-pages</code>分支就可以创建静态页面了。这利用了项目站点（即Project Pages）的方式。</p>
+<p>下面通过一个例子来说明 gh-pages  的使用：</p>
+<p>第一步： <strong>创建一个 Github 仓库</strong></p>
+<ul>
+<li>例如新建一个 <code>deeplearning-notes</code> 的仓库，主要用于记录深度学习的笔记， GitHub 地址： <a href="https://github.com/jianzhnie/deeplearning-notes" target="_blank" rel="noopener">https://github.com/jianzhnie/deeplearning-notes</a></li>
+</ul>
+<p>第二步， 同样的参考上面搭建网站的方式,  新建一个网站：</p>
+<ul>
+<li><code>hugo new site </code>  project</li>
+</ul>
+<p>第三步， 新建一篇笔记：</p>
+<ul>
+<li><code>hugo new posts/deeplearning.md</code></li>
+</ul>
+<p>第四步：<strong>修改配置文件 config.toml</strong></p>
+<p>站点目录**<code>config.toml</code><strong>中</strong><code>baseURL</code>**要换成自己建立的仓库，如baseURL = “https://jianzhnie.github.io/deeplearning-notes/&quot;</p>
+<p>第五步： 进入<strong>站点根目录</strong>下，执行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>执行后，站点根目录下会生成一个 <code>public</code> 文件夹，该文件下的内容即Hugo生成的整个静态网站。</p>
+<p>第六步：初始化项目，并设置 gh-pages 分支</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd public
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git remote add origin https://github.com/jianzhnie/jianzhnie.github.io.git # 将本地目录链接到远程服务器的代码仓库
+</span></span><span class="line"><span class="cl">git checkout -b gh-pages
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m &#34;[介绍，随便写点什么，比如日期]&#34;
+</span></span><span class="line"><span class="cl">git push -u --set-upstream origin gh-pages
+</span></span></code></pre></div><p>第七步：打开 <a href="https://jianzhnie.github.io/deeplearning-notes/" target="_blank" rel="noopener">https://jianzhnie.github.io/deeplearning-notes/</a> 就可以看到项目的相关文档了。</p>
+<h2 id="github-action-自动发布">Github Action 自动发布</h2>
+<p>通过上述命令我们可以手动发布我们的静态文件，但还是有以下弊端：</p>
+<ol>
+<li>发布步骤还是比较繁琐，本地调试后还需要切换到 <code>public/</code> 目录进行上传</li>
+<li>无法对博客 <code>.md</code> 源文件进行备份与版本管理</li>
+</ol>
+<p>因此，我们需要简单顺滑的方式来进行博客发布，首先我们初始化博客源文件的仓库，如我的仓库为 <a href="https://github.com/pseudoyu/yu-blog" target="_blank" rel="noopener">pseudoyu/yu-blog</a>。</p>
+<p>因为我们的博客基于 GitHub 与 GitHub Pages，可以通过官方提供的 GitHub Action 进行 CI 自动发布，下面我会进行详细讲解。GitHub Action 是一个持续集成和持续交付(CI/CD) 平台，可用于自动执行构建、测试和部署管道，目前已经有很多开发好的工作流，可以通过简单的配置即可直接使用。</p>
+<p>配置在仓库目录 <code>.github/workflows</code> 下，以 <code>.yml</code> 为后缀。我的 GitHub Action 配置为 <a href="https://github.com/pseudoyu/yu-blog/blob/master/.github/workflows/deploy.yml" target="_blank" rel="noopener">pseudoyu/yu-blog deploy.yml</a>，自动发布示例配置如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">schedule</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># Runs everyday at 8:00 AM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0 0 * * *&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Checkout</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Setup Hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;latest&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-gh-pages@v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">PERSONAL_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.PERSONAL_TOKEN }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">EXTERNAL_REPOSITORY</span><span class="p">:</span><span class="w"> </span><span class="l">pseudoyu/pseudoyu.github.io</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">PUBLISH_BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l">master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">PUBLISH_DIR</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.event.head_commit.message }}</span><span class="w">
+</span></span></span></code></pre></div><p><code>on</code> 表示 GitHub Action 触发条件，我设置了 <code>push</code>、<code>workflow_dispatch</code> 和 <code>schedule</code> 三个条件：</p>
+<ul>
+<li><code>push</code>，当这个项目仓库发生推送动作后，执行 GitHub Action</li>
+<li><code>workflow_dispatch</code>，可以在 GitHub 项目仓库的 Action 工具栏进行手动调用</li>
+<li><code>schedule</code>，定时执行 GitHub Action，如我的设置为北京时间每天早上执行，主要是使用一些自动化统计 CI 来自动更新我博客的关于页面，如本周编码时间，影音记录等，如果你不需要定时功能，可以删除这个条件</li>
+</ul>
+<p><code>jobs</code> 表示 GitHub Action 中的任务，我们设置了一个 <code>build</code> 任务，<code>runs-on</code> 表示 GitHub Action 运行环境，我们选择了 <code>ubuntu-latest</code>。我们的 <code>build</code> 任务包含了 <code>Checkout</code>、<code>Setup Hugo</code>、<code>Build Web</code> 和 <code>Deploy Web</code> 四个主要步骤，其中 <code>run</code> 是执行的命令，<code>uses</code> 是 GitHub Action 中的一个插件，我们使用了 <code>peaceiris/actions-hugo@v2</code> 和 <code>peaceiris/actions-gh-pages@v3</code> 这两个插件。其中 <code>Checkout</code> 步骤中 <code>with</code> 中配置 <code>submodules</code> 值为 <code>true</code> 可以同步博客源仓库的子模块，即我们的主题模块。</p>
+<p>首先需要将上述 <code>deploy.yml</code> 中的 <code>EXTERNAL_REPOSITORY</code> 改为自己的 GitHub Pages 仓库，如我的设置为 <code>pseudoyu/pseudoyu.github.io</code>。</p>
+<p>因为我们需要从博客仓库推送到外部 GitHub Pages 仓库，需要特定权限，要在 GitHub 账户下 <code>Setting - Developer setting - Personal access tokens</code> 下创建一个 Token。</p>
+<h2 id="总结">总结</h2>
+<p>以上整个环境部署好之后，接下来的常用命令就是以下几个：</p>
+<ul>
+<li>
+<ol>
+<li><strong>站点目录</strong>下，新建文章，执行：</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new post/文章名.md
+</span></span></code></pre></div><ul>
+<li>
+<ol start="2">
+<li>添加文章内容或修改，包括修改主题之类的，在本地进行调试</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>修改完成，确定要上传到GitHub上后，<strong>站点目录</strong>下执行：</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>进行编译，没错误的话修改的内容就顺利同步到<code>public</code>下了，然后**<code>cd public</code>**下，执行提交命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add -A
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;20200204-1&#34;</span>
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span></code></pre></div><h2 id="选择和配置hugo-主题">选择和配置Hugo 主题</h2>
+<h3 id="流行的-hugo-主题">流行的 Hugo 主题</h3>
+<p>使用 Hugo 博客时，我们最希望的是找到适合自己的一款主题，下面将图文结合介绍一些流行的 Hugo 主题。此外，关于写作的方法和 Hugo 主题修改，可以查阅本文参考中的 Hugo 官方文档，这里不再赘述。</p>
+<h4 id="hugo-流行主题之-1meme">Hugo 流行主题之 1：MemE</h4>
+<p>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。MemE 主题专注于优雅、简约、现代，以及代码的正确性。Github 地址：https://github.com/reuixiy/hugo-theme-meme。</p>
+<h4 id="hugo-流行主题之-2clarity">Hugo 流行主题之 2：Clarity</h4>
+<p>基于 VMware 的开源 Clarity 设计系统，具有丰富的代码支持、暗/光模式、移动支持等特点，为 Hugo 设计了一个具有技术意识的主题。Github 地址：https://github.com/chipzoller/hugo-clarity</p>
+<h4 id="hugo-流行主题之-3--loveit">Hugo 流行主题之 3：  LoveIt</h4>
+<p><a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener">LoveIt</a> 是一个<strong>简洁</strong>、<strong>优雅</strong>且<strong>高效</strong>的 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 博客主题。Github 地址： <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener">https://github.com/dillonzq/LoveIt</a></p>
+<p>它的原型基于 <a href="https://github.com/liuzc/LeaveIt" target="_blank" rel="noopener">LeaveIt 主题</a> 和 <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="noopener">KeepIt 主题</a>。LoveIt 主题 <a href="https://circleci.com/gh/dillonzq/LoveIt/tree/master" target="_blank" rel="noopener">https://circleci.com/gh/dillonzq/LoveIt/tree/master</a>)</p>
+<h4 id="hugo-流行主题之-4--hugo-book-theme">Hugo 流行主题之 4：  Hugo Book Theme</h4>
+<p><a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> documentation theme as simple as plain book. Github  地址： <a href="https://github.com/alex-shpak/hugo-book" target="_blank" rel="noopener">https://github.com/alex-shpak/hugo-book</a></p>
+<h4 id="hugo-流行主题之-5hugo-academic-theme-----">Hugo 流行主题之 5：Hugo Academic Theme （* * * * *）</h4>
+<p>Hugo Academic Theme 创建一个学术网站. Easily create a beautiful academic résumé or educational website using Hugo, GitHub, and Netlify. github地址： <a href="https://github.com/wowchemy/starter-hugo-academic" target="_blank" rel="noopener">https://github.com/wowchemy/starter-hugo-academic</a></p>
+<h4 id="hugo--流行主题之-6--hugo-learn-theme-------">Hugo  流行主题之 6 ： Hugo Learn Theme   （* * * * *）</h4>
+<p>This repository contains a theme for <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>, based on great <a href="https://learn.getgrav.org/" target="_blank" rel="noopener">Grav Learn Theme</a>.</p>
+<p>Visit the <a href="https://learn.netlify.com/en/" target="_blank" rel="noopener">theme documentation</a> to see what is going on. It is actually built with this theme.</p>
+<h4 id="hugo--流行主题之-7--doks">Hugo  流行主题之 7:  Doks</h4>
+<p>Modern Documentation Theme</p>
+<p>Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize.</p>
+<h3 id="配置-hugo-主题">配置 Hugo 主题</h3>
+<p>最好的搜索方式是在 <a href="https://link.segmentfault.com/?enc=bb3uhrKTHsLlmrcsJuKTEQ%3D%3D.SUzhbzimTsmhRR9j6wDNC2E3qL5or16iSY2UP6ECWBo%3D" target="_blank" rel="noopener">https://github.com/</a> 中，搜索关键词：<code>hugo theme</code>。或者使用搜索引擎，搜索：<code>hugo theme site:github.com</code>。</p>
+<p>然后进入到项目目录中，下载安装我们需要的主题：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-awk" data-lang="awk"><span class="line"><span class="cl"><span class="nx">git</span> <span class="nx">clone</span> <span class="nx">https</span><span class="err">:</span><span class="o">/</span><span class="err">/github.com/theme-demo.git themes/theme-demo</span>
+</span></span><span class="line"><span class="cl"><span class="nx">cp</span> <span class="o">-</span><span class="nx">r</span> <span class="nx">themes</span><span class="o">/</span><span class="nx">theme</span><span class="o">-</span><span class="nx">demo</span><span class="o">/</span><span class="nx">_source</span><span class="o">/*</span> <span class="nx">source</span>
+</span></span></code></pre></div><p>希望使用下载的主题，添加 themes/theme-demo/exampleSite/config.toml 中的配置，还需要在 config.toml 中配置主题：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-abnf" data-lang="abnf"><span class="line"><span class="cl"><span class="nc">theme</span> <span class="o">=</span> <span class="l">&#34;theme-demo&#34;</span>
+</span></span></code></pre></div><p>此外，在有些 theme-demo 文件夹中会有 demo 或 example 目录，文件结构与新建的 Hugo 项目的文件结构几乎是一样的，这样设置是为了用户的配置可以覆盖掉主题的配置。</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://leidawt.github.io/post/%E5%80%9F%E5%8A%A9hugo%E5%92%8Cacademic%E4%B8%BB%E9%A2%98%E5%9C%A8github/" target="_blank" rel="noopener">https://leidawt.github.io/post/%E5%80%9F%E5%8A%A9hugo%E5%92%8Cacademic%E4%B8%BB%E9%A2%98%E5%9C%A8github/</a></li>
+<li><a href="https://medium.com/%E9%80%B2%E6%93%8A%E7%9A%84-git-git-git/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E7%94%A8github-pages-%E4%B8%8A%E5%82%B3%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-fa2ae83e6276" target="_blank" rel="noopener">https://medium.com/%E9%80%B2%E6%93%8A%E7%9A%84-git-git-git/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E7%94%A8github-pages-%E4%B8%8A%E5%82%B3%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-fa2ae83e6276</a></li>
+<li><a href="https://www.cnblogs.com/MuYunyun/p/6082359.html" target="_blank" rel="noopener">https://www.cnblogs.com/MuYunyun/p/6082359.html</a></li>
+<li>show case
+<ul>
+<li><a href="https://github.com/andrewheiss/datavizs21.classes.andrewheiss.com" target="_blank" rel="noopener">https://github.com/andrewheiss/datavizs21.classes.andrewheiss.com</a></li>
+<li><a href="https://datavizs21.classes.andrewheiss.com/content/05-content/" target="_blank" rel="noopener">https://datavizs21.classes.andrewheiss.com/content/05-content/</a></li>
+</ul>
+</li>
+<li><a href="https://wowchemy.com/templates/" target="_blank" rel="noopener">https://wowchemy.com/templates/</a></li>
+<li><a href="https://github.com/wowchemy/starter-hugo-research-group" target="_blank" rel="noopener">https://github.com/wowchemy/starter-hugo-research-group</a></li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/hugo/">hugo</a>
+  
+  <a class="badge badge-light" href="/tag/site/">Site</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fhugo_site%2F&amp;text=Hugo&#43;%2B&#43;Github&#43;Pages&#43;%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fhugo_site%2F&amp;t=Hugo&#43;%2B&#43;Github&#43;Pages&#43;%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Hugo%20%2B%20Github%20Pages%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2&amp;body=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fhugo_site%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fhugo_site%2F&amp;title=Hugo&#43;%2B&#43;Github&#43;Pages&#43;%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Hugo&#43;%2B&#43;Github&#43;Pages&#43;%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fhugo_site%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjianzhnie.github.io%2Fpost%2Fhugo_site%2F&amp;title=Hugo&#43;%2B&#43;Github&#43;Pages&#43;%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      由<a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>支持发布——免费<a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">开源</a>网站，为创作者赋能。
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="/zh/js/wowchemy.min.b81c9d0315dc5c2eb807da97a2429254.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

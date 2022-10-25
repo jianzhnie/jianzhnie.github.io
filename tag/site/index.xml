@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Site | Robin 的个人主页</title>
+    <link>https://jianzhnie.github.io/tag/site/</link>
+      <atom:link href="https://jianzhnie.github.io/tag/site/index.xml" rel="self" type="application/rss+xml" />
+    <description>Site</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sat, 22 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://jianzhnie.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Site</title>
+      <link>https://jianzhnie.github.io/tag/site/</link>
+    </image>
+    
+    <item>
+      <title>Hugo &#43; Github Pages 搭建个人博客</title>
+      <link>https://jianzhnie.github.io/post/hugo_site/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://jianzhnie.github.io/post/hugo_site/</guid>
+      <description>&lt;h2 id=&#34;使用-hugo-搭建博客&#34;&gt;使用 Hugo 搭建博客&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; 是用 Go 实现的博客工具，采用 Markdown 进行文章编辑，自动生成静态站点文件，支持丰富的主题配置，也可以通过 js 嵌入像是评论系统等插件，高度定制化。除了 Hugo 外， 还有 Gatsby、Jekyll、Hexo、Ghost 等选择，实现和使用都差不多，可以根据自己的偏好进行选择。&lt;/p&gt;
+&lt;h3 id=&#34;安装-hugo&#34;&gt;安装 Hugo&lt;/h3&gt;
+&lt;p&gt;我使用的是 macOS，所以使用官方推荐的 homebrew 方式进行 hugo 程序的安装，其他系统也类似。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;完成后，使用以下命令进行验证：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;创建-hugo-网站&#34;&gt;创建 Hugo 网站&lt;/h3&gt;
+&lt;p&gt;通过上述命令安装 hugo 程序后，就可以通过 &lt;code&gt;hugo new site&lt;/code&gt; 命令进行网站创建、配置与本地调试了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new site robin-site
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Congratulations! Your new Hugo site is created in /Users/jianzhengnie/work_dir/personal_home/robin-site.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Just a few more steps and you&lt;span class=&#34;err&#34;&gt;&amp;#39;&lt;/span&gt;re ready to go:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. Download a theme into the same-named folder.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   Choose a theme from https://themes.gohugo.io/ or
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   create your own with the &lt;span class=&#34;s2&#34;&gt;&amp;#34;hugo new theme &amp;lt;THEMENAME&amp;gt;&amp;#34;&lt;/span&gt; command.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. Perhaps you want to add some content. You can add single files
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   with &lt;span class=&#34;s2&#34;&gt;&amp;#34;hugo new &amp;lt;SECTIONNAME&amp;gt;/&amp;lt;FILENAME&amp;gt;.&amp;lt;FORMAT&amp;gt;&amp;#34;&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. Start the built-in live server via &lt;span class=&#34;s2&#34;&gt;&amp;#34;hugo server&amp;#34;&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Visit https://gohugo.io/ &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; quickstart guide and full documentation.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;注：后续命令未经说明，均在cmd中的robin-site根目录下运行&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;创建完成后，根目录 robin-site 包含以下文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── archetypes: default.md是生成博文的模版
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── assets &lt;span class=&#34;c1&#34;&gt;# 存放被 Hugo Pipes 处理的文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── content &lt;span class=&#34;c1&#34;&gt;# 存放markdown文件作为博文内容&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── data &lt;span class=&#34;c1&#34;&gt;# 存放 Hugo 处理的数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── layouts &lt;span class=&#34;c1&#34;&gt;# 存放布局文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── static &lt;span class=&#34;c1&#34;&gt;# 存放静态文件 图片 CSS JS文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── themes: 存放不同的主题
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── config.toml: 博客配置文件支持 JSON YAML TOML 三种格式配置文件
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;配置主题&#34;&gt;配置主题&lt;/h3&gt;
+&lt;p&gt;当通过上文命令创建我们的站点后，需要进行主题配置，Hugo 社区有了很丰富的主题，可以通过官网 &lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Themes&lt;/a&gt; 菜单选择自己喜欢的风格，查看预览效果，选择后可以进入主题项目仓库，一般都会有很详细的安装及配置说明。&lt;/p&gt;
+&lt;p&gt;官方主题网站: &lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://themes.gohugo.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;主题推荐:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pure: &lt;a href=&#34;https://themes.gohugo.io/hugo-theme-pure/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://themes.gohugo.io/hugo-theme-pure/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;关联主题仓库&#34;&gt;关联主题仓库&lt;/h4&gt;
+&lt;p&gt;我们可以将主题仓库直接 &lt;code&gt;git clone&lt;/code&gt; 下来进行使用，例如在根目录robin-site下运行以下代码，即可下载pure主题.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/xiaoheiAh/hugo-theme-pure themes/pure
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这种方式有一些弊端，当之后自己对主题进行修改后，可能会与原主题产生一些冲突，不方便版本管理与后续更新。官方更推荐使用的是将原主题仓库 &lt;code&gt;fork&lt;/code&gt; 到自己的账户，并使用 &lt;code&gt;git submodule&lt;/code&gt; 方式进行仓库链接，这样后续可以对主题的修改进行单独维护。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt;  robin-site/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule add https://github.com/pseudoyu/pure themes/pure
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后在根目录下的 &lt;code&gt;config.toml&lt;/code&gt;文件中添加新的一行:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;theme&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;pure&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;更新主题&#34;&gt;更新主题&lt;/h4&gt;
+&lt;p&gt;如果是 clone 了其他人的博客项目进行修改，则需要用以下命令进行初始化：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule update --init --recursive
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果需要同步主题仓库的最新修改，需要运行以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule update --remote
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;新建博文&#34;&gt;新建博文&lt;/h3&gt;
+&lt;p&gt;完成后，可以通过 &lt;code&gt;hugo new&lt;/code&gt; 命令发布新文章。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new posts/test.md
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title: &amp;#34;Test&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;date: 2022-10-21T19:00:43+08:00
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;draft: true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个命令会在 &lt;code&gt;content&lt;/code&gt; 目录下建立 &lt;code&gt;post&lt;/code&gt; 目录，并在 &lt;code&gt;post&lt;/code&gt; 下生成 &lt;code&gt;test.md&lt;/code&gt; 文件，博文书写就在这个文件里使用 Markdown 语法完成。博文的 front matter 里&lt;code&gt;draft&lt;/code&gt; 选项默认为 &lt;code&gt;true&lt;/code&gt;，需要改为 &lt;code&gt;false&lt;/code&gt; 才能发表博文，建议直接更改上面说的&lt;code&gt;archetypes&lt;/code&gt; 目录下的 &lt;code&gt;default&lt;/code&gt; 文件，把 &lt;code&gt;draft: true&lt;/code&gt; 改为 &lt;code&gt;draft: false&lt;/code&gt;，这样生成的博文就是默认可以发表的。&lt;/p&gt;
+&lt;h3 id=&#34;生成网页&#34;&gt;生成网页&lt;/h3&gt;
+&lt;p&gt;为了查看生成的博客的效果，我们在本地编辑调试时可以通过 &lt;code&gt;hugo server&lt;/code&gt; 命令进行本地实时调试预览，无须每次都重新生成。在cmd中运行以下命令，即我们可以通过浏览器  http://localhost:1313/ 地址访问我们的本地预览网页。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo server -D
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但此时只能在本地访问，如果想发布到 &lt;code&gt;Github Pages&lt;/code&gt; ， 还需要借助 GithubPages 工具。&lt;/p&gt;
+&lt;h3 id=&#34;配置文件&#34;&gt;&lt;strong&gt;配置文件&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;打开配置config.toml可以看到很多的参数可以配置，这里只描述最基本的内容，不同的主题可能会支持不同的参数配置，具体请看对应主题的说明文档。baseURL是站点的域名。title是站点的名称。theme是站点的主题。还有关于评论和打赏的相关配置，这些配置都可以参考官网主题的说明。&lt;/p&gt;
+&lt;p&gt;每次发布的时候，都需要先执行hugo，把新写的文档按照主题进行渲染，所有生成的文件默认都在当前pulic的子目录下，可以在config里面配置到其他目录。然后把所有新的文件提交到github。提交代码之后，要等一段时间才生效。&lt;/p&gt;
+&lt;h2 id=&#34;github-pages-发布博客&#34;&gt;GitHub Pages 发布博客&lt;/h2&gt;
+&lt;p&gt;我们希望 Hugo 生成的静态网站能通过 GitHub Pages 服务进行托管，而无需自己维护服务，更稳定、安全，因此我们需要上传 Hugo 生成的静态网页文件至 GitHub Page 项目仓库。&lt;/p&gt;
+&lt;h3 id=&#34;github-pages-到底是在做什么&#34;&gt;&lt;strong&gt;Github Pages 到底是在做什么？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;A：Github Pages 本质上是一个静态网站托管系统，你可以使用它为你的每一个仓库制作一个静态网页入口。&lt;/p&gt;
+&lt;p&gt;它有两种存在方式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;识别 master branch 根目录下的：&lt;a href=&#34;&#34;&gt;README.md&lt;/a&gt; 或者 index.html&lt;/li&gt;
+&lt;li&gt;识别 master branch 的 /docs 目录下的：&lt;a href=&#34;&#34;&gt;README.md&lt;/a&gt; 或者 index.html&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;也就是说：我们可以把我们的静态网页直接存在 master branch，并在 Github Repository 的 Setting 页中打开 Github Pages 选项，就可以通过一个域名访问到我们的想要的网站了。&lt;/p&gt;
+&lt;h3 id=&#34;实战操作部署-hugo-作为一个-github-pages&#34;&gt;实战操作：部署 Hugo 作为一个 Github Pages&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将 Hugo 部署为 Github Pages 项目，并使用简单的 shell 脚本自动化整个过程&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;第一步： &lt;strong&gt;创建一个 Github 仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;登录后，点击右上角，出现下拉菜单，点击 Your repositories 进入页面&lt;/li&gt;
+&lt;li&gt;点击 New&lt;/li&gt;
+&lt;li&gt;进入 Creat a new repository 页面&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Repository name&lt;/code&gt; 这里一定要填 &lt;code&gt;[你的github帳號].github.io&lt;/code&gt;，像我的帳號是 &lt;code&gt;jianzhnie&lt;/code&gt;，所以我就要輸入 &lt;code&gt;jianzhnie.github.io&lt;/code&gt;，然後按 &lt;code&gt;[Create Repository]&lt;/code&gt; 。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;第二步：创建新文章&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new posts/my-first-post.md
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里面值得注意的是，通过上述命令行创建的文章中，会自动生成一部分文本如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title: &amp;#34;My First Post&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;date: 2019-03-26T08:47:11+01:00
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;draft: true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们需要把 draft : true 修改成 draft : false 才可以上传这篇文章&lt;/p&gt;
+&lt;p&gt;第三步：&lt;strong&gt;修改配置文件 config.toml&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;站点目录**&lt;code&gt;config.toml&lt;/code&gt;&lt;strong&gt;中&lt;/strong&gt;&lt;code&gt;baseURL&lt;/code&gt;**要换成自己建立的仓库，如baseURL = “https://jianzhnie.github.io/&amp;quot;&lt;/p&gt;
+&lt;p&gt;第四步： 进入&lt;strong&gt;站点根目录&lt;/strong&gt;下，执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行后，站点根目录下会生成一个 &lt;code&gt;public&lt;/code&gt; 文件夹，该文件下的内容即Hugo生成的整个静态网站。每次更新内容后，将 pubilc 目录里所有文件 push到GitHub即可。&lt;/p&gt;
+&lt;p&gt;第五步：上传代码至 master&lt;/p&gt;
+&lt;p&gt;首次使用的时候要执行以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; public
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add origin https://github.com/jianzhnie/jianzhnie.github.io.git &lt;span class=&#34;c1&#34;&gt;# 将本地目录链接到远程服务器的代码仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;[介绍，随便写点什么，比如日期]&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;稍等几分钟即可通过我们的自定义域名来访问我们的博客站点了，和我们 &lt;code&gt;hugo server&lt;/code&gt; 本地调试完全一致。&lt;/p&gt;
+&lt;p&gt;以后每次&lt;strong&gt;站点目录&lt;/strong&gt;下执行 &lt;code&gt;hugo&lt;/code&gt; 命令后，再到&lt;code&gt;public&lt;/code&gt;下执行推送命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add -A
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &amp;#34;[介绍，随便写点什么，比如日期]&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;用-github-的-gh-pages-分支展示自己的项目&#34;&gt;用 Github 的 gh-pages 分支展示自己的项目&lt;/h2&gt;
+&lt;p&gt;上根据上面的教程， 我们可以 创建个人的博客网站，如 &lt;code&gt;https://jianzhnie.github.io&lt;/code&gt;, 这个网站一般是作为个人博客或者学术主页，如果我们还有其他项目需要展示， 如项目文档，产品文档，学习笔记等， 那这个主页就不够用了。&lt;/p&gt;
+&lt;p&gt;下面介绍一种解决方案，用 Github 的 gh-pages 分支展示自己的项目。Github创建项目仓库后随即只产生一个master分支，只需要再添加&lt;code&gt;gh-pages&lt;/code&gt;分支就可以创建静态页面了。这利用了项目站点（即Project Pages）的方式。&lt;/p&gt;
+&lt;p&gt;下面通过一个例子来说明 gh-pages  的使用：&lt;/p&gt;
+&lt;p&gt;第一步： &lt;strong&gt;创建一个 Github 仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例如新建一个 &lt;code&gt;deeplearning-notes&lt;/code&gt; 的仓库，主要用于记录深度学习的笔记， GitHub 地址： &lt;a href=&#34;https://github.com/jianzhnie/deeplearning-notes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/jianzhnie/deeplearning-notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第二步， 同样的参考上面搭建网站的方式,  新建一个网站：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hugo new site &lt;/code&gt;  project&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第三步， 新建一篇笔记：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hugo new posts/deeplearning.md&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第四步：&lt;strong&gt;修改配置文件 config.toml&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;站点目录**&lt;code&gt;config.toml&lt;/code&gt;&lt;strong&gt;中&lt;/strong&gt;&lt;code&gt;baseURL&lt;/code&gt;**要换成自己建立的仓库，如baseURL = “https://jianzhnie.github.io/deeplearning-notes/&amp;quot;&lt;/p&gt;
+&lt;p&gt;第五步： 进入&lt;strong&gt;站点根目录&lt;/strong&gt;下，执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行后，站点根目录下会生成一个 &lt;code&gt;public&lt;/code&gt; 文件夹，该文件下的内容即Hugo生成的整个静态网站。&lt;/p&gt;
+&lt;p&gt;第六步：初始化项目，并设置 gh-pages 分支&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd public
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add origin https://github.com/jianzhnie/jianzhnie.github.io.git # 将本地目录链接到远程服务器的代码仓库
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout -b gh-pages
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &amp;#34;[介绍，随便写点什么，比如日期]&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u --set-upstream origin gh-pages
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第七步：打开 &lt;a href=&#34;https://jianzhnie.github.io/deeplearning-notes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://jianzhnie.github.io/deeplearning-notes/&lt;/a&gt; 就可以看到项目的相关文档了。&lt;/p&gt;
+&lt;h2 id=&#34;github-action-自动发布&#34;&gt;Github Action 自动发布&lt;/h2&gt;
+&lt;p&gt;通过上述命令我们可以手动发布我们的静态文件，但还是有以下弊端：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;发布步骤还是比较繁琐，本地调试后还需要切换到 &lt;code&gt;public/&lt;/code&gt; 目录进行上传&lt;/li&gt;
+&lt;li&gt;无法对博客 &lt;code&gt;.md&lt;/code&gt; 源文件进行备份与版本管理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因此，我们需要简单顺滑的方式来进行博客发布，首先我们初始化博客源文件的仓库，如我的仓库为 &lt;a href=&#34;https://github.com/pseudoyu/yu-blog&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pseudoyu/yu-blog&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;因为我们的博客基于 GitHub 与 GitHub Pages，可以通过官方提供的 GitHub Action 进行 CI 自动发布，下面我会进行详细讲解。GitHub Action 是一个持续集成和持续交付(CI/CD) 平台，可用于自动执行构建、测试和部署管道，目前已经有很多开发好的工作流，可以通过简单的配置即可直接使用。&lt;/p&gt;
+&lt;p&gt;配置在仓库目录 &lt;code&gt;.github/workflows&lt;/code&gt; 下，以 &lt;code&gt;.yml&lt;/code&gt; 为后缀。我的 GitHub Action 配置为 &lt;a href=&#34;https://github.com/pseudoyu/yu-blog/blob/master/.github/workflows/deploy.yml&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pseudoyu/yu-blog deploy.yml&lt;/a&gt;，自动发布示例配置如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;deploy&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;workflow_dispatch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;schedule&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Runs everyday at 8:00 AM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;cron&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;0 0 * * *&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;jobs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;runs-on&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ubuntu-latest&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;steps&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Checkout&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;uses&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;actions/checkout@v2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;with&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;                  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;submodules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;                  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;fetch-depth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Setup Hugo&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;uses&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;peaceiris/actions-hugo@v2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;with&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;                  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;hugo-version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;latest&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Build Web&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;hugo&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Deploy Web&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;uses&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;peaceiris/actions-gh-pages@v3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;with&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;                  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;PERSONAL_TOKEN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;${{ secrets.PERSONAL_TOKEN }}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;                  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;EXTERNAL_REPOSITORY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;pseudoyu/pseudoyu.github.io&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;                  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;PUBLISH_BRANCH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;master&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;                  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;PUBLISH_DIR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;./public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;                  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;commit_message&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;${{ github.event.head_commit.message }}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;on&lt;/code&gt; 表示 GitHub Action 触发条件，我设置了 &lt;code&gt;push&lt;/code&gt;、&lt;code&gt;workflow_dispatch&lt;/code&gt; 和 &lt;code&gt;schedule&lt;/code&gt; 三个条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;push&lt;/code&gt;，当这个项目仓库发生推送动作后，执行 GitHub Action&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;workflow_dispatch&lt;/code&gt;，可以在 GitHub 项目仓库的 Action 工具栏进行手动调用&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;schedule&lt;/code&gt;，定时执行 GitHub Action，如我的设置为北京时间每天早上执行，主要是使用一些自动化统计 CI 来自动更新我博客的关于页面，如本周编码时间，影音记录等，如果你不需要定时功能，可以删除这个条件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;jobs&lt;/code&gt; 表示 GitHub Action 中的任务，我们设置了一个 &lt;code&gt;build&lt;/code&gt; 任务，&lt;code&gt;runs-on&lt;/code&gt; 表示 GitHub Action 运行环境，我们选择了 &lt;code&gt;ubuntu-latest&lt;/code&gt;。我们的 &lt;code&gt;build&lt;/code&gt; 任务包含了 &lt;code&gt;Checkout&lt;/code&gt;、&lt;code&gt;Setup Hugo&lt;/code&gt;、&lt;code&gt;Build Web&lt;/code&gt; 和 &lt;code&gt;Deploy Web&lt;/code&gt; 四个主要步骤，其中 &lt;code&gt;run&lt;/code&gt; 是执行的命令，&lt;code&gt;uses&lt;/code&gt; 是 GitHub Action 中的一个插件，我们使用了 &lt;code&gt;peaceiris/actions-hugo@v2&lt;/code&gt; 和 &lt;code&gt;peaceiris/actions-gh-pages@v3&lt;/code&gt; 这两个插件。其中 &lt;code&gt;Checkout&lt;/code&gt; 步骤中 &lt;code&gt;with&lt;/code&gt; 中配置 &lt;code&gt;submodules&lt;/code&gt; 值为 &lt;code&gt;true&lt;/code&gt; 可以同步博客源仓库的子模块，即我们的主题模块。&lt;/p&gt;
+&lt;p&gt;首先需要将上述 &lt;code&gt;deploy.yml&lt;/code&gt; 中的 &lt;code&gt;EXTERNAL_REPOSITORY&lt;/code&gt; 改为自己的 GitHub Pages 仓库，如我的设置为 &lt;code&gt;pseudoyu/pseudoyu.github.io&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;因为我们需要从博客仓库推送到外部 GitHub Pages 仓库，需要特定权限，要在 GitHub 账户下 &lt;code&gt;Setting - Developer setting - Personal access tokens&lt;/code&gt; 下创建一个 Token。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;以上整个环境部署好之后，接下来的常用命令就是以下几个：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;站点目录&lt;/strong&gt;下，新建文章，执行：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new post/文章名.md
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;添加文章内容或修改，包括修改主题之类的，在本地进行调试&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;修改完成，确定要上传到GitHub上后，&lt;strong&gt;站点目录&lt;/strong&gt;下执行：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;进行编译，没错误的话修改的内容就顺利同步到&lt;code&gt;public&lt;/code&gt;下了，然后**&lt;code&gt;cd public&lt;/code&gt;**下，执行提交命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add -A
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;20200204-1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;选择和配置hugo-主题&#34;&gt;选择和配置Hugo 主题&lt;/h2&gt;
+&lt;h3 id=&#34;流行的-hugo-主题&#34;&gt;流行的 Hugo 主题&lt;/h3&gt;
+&lt;p&gt;使用 Hugo 博客时，我们最希望的是找到适合自己的一款主题，下面将图文结合介绍一些流行的 Hugo 主题。此外，关于写作的方法和 Hugo 主题修改，可以查阅本文参考中的 Hugo 官方文档，这里不再赘述。&lt;/p&gt;
+&lt;h4 id=&#34;hugo-流行主题之-1meme&#34;&gt;Hugo 流行主题之 1：MemE&lt;/h4&gt;
+&lt;p&gt;MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。MemE 主题专注于优雅、简约、现代，以及代码的正确性。Github 地址：https://github.com/reuixiy/hugo-theme-meme。&lt;/p&gt;
+&lt;h4 id=&#34;hugo-流行主题之-2clarity&#34;&gt;Hugo 流行主题之 2：Clarity&lt;/h4&gt;
+&lt;p&gt;基于 VMware 的开源 Clarity 设计系统，具有丰富的代码支持、暗/光模式、移动支持等特点，为 Hugo 设计了一个具有技术意识的主题。Github 地址：https://github.com/chipzoller/hugo-clarity&lt;/p&gt;
+&lt;h4 id=&#34;hugo-流行主题之-3--loveit&#34;&gt;Hugo 流行主题之 3：  LoveIt&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dillonzq/LoveIt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoveIt&lt;/a&gt; 是一个&lt;strong&gt;简洁&lt;/strong&gt;、&lt;strong&gt;优雅&lt;/strong&gt;且&lt;strong&gt;高效&lt;/strong&gt;的 &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; 博客主题。Github 地址： &lt;a href=&#34;https://github.com/dillonzq/LoveIt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/dillonzq/LoveIt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;它的原型基于 &lt;a href=&#34;https://github.com/liuzc/LeaveIt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LeaveIt 主题&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/Fastbyte01/KeepIt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;KeepIt 主题&lt;/a&gt;。LoveIt 主题 &lt;a href=&#34;https://circleci.com/gh/dillonzq/LoveIt/tree/master&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://circleci.com/gh/dillonzq/LoveIt/tree/master&lt;/a&gt;)&lt;/p&gt;
+&lt;h4 id=&#34;hugo-流行主题之-4--hugo-book-theme&#34;&gt;Hugo 流行主题之 4：  Hugo Book Theme&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; documentation theme as simple as plain book. Github  地址： &lt;a href=&#34;https://github.com/alex-shpak/hugo-book&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/alex-shpak/hugo-book&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;hugo-流行主题之-5hugo-academic-theme-----&#34;&gt;Hugo 流行主题之 5：Hugo Academic Theme （* * * * *）&lt;/h4&gt;
+&lt;p&gt;Hugo Academic Theme 创建一个学术网站. Easily create a beautiful academic résumé or educational website using Hugo, GitHub, and Netlify. github地址： &lt;a href=&#34;https://github.com/wowchemy/starter-hugo-academic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/wowchemy/starter-hugo-academic&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;hugo--流行主题之-6--hugo-learn-theme-------&#34;&gt;Hugo  流行主题之 6 ： Hugo Learn Theme   （* * * * *）&lt;/h4&gt;
+&lt;p&gt;This repository contains a theme for &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt;, based on great &lt;a href=&#34;https://learn.getgrav.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Grav Learn Theme&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Visit the &lt;a href=&#34;https://learn.netlify.com/en/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;theme documentation&lt;/a&gt; to see what is going on. It is actually built with this theme.&lt;/p&gt;
+&lt;h4 id=&#34;hugo--流行主题之-7--doks&#34;&gt;Hugo  流行主题之 7:  Doks&lt;/h4&gt;
+&lt;p&gt;Modern Documentation Theme&lt;/p&gt;
+&lt;p&gt;Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize.&lt;/p&gt;
+&lt;h3 id=&#34;配置-hugo-主题&#34;&gt;配置 Hugo 主题&lt;/h3&gt;
+&lt;p&gt;最好的搜索方式是在 &lt;a href=&#34;https://link.segmentfault.com/?enc=bb3uhrKTHsLlmrcsJuKTEQ%3D%3D.SUzhbzimTsmhRR9j6wDNC2E3qL5or16iSY2UP6ECWBo%3D&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/&lt;/a&gt; 中，搜索关键词：&lt;code&gt;hugo theme&lt;/code&gt;。或者使用搜索引擎，搜索：&lt;code&gt;hugo theme site:github.com&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;然后进入到项目目录中，下载安装我们需要的主题：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-awk&#34; data-lang=&#34;awk&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;clone&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/github.com/theme-demo.git themes/theme-demo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;cp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;themes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;demo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;_source&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/*&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;source&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;希望使用下载的主题，添加 themes/theme-demo/exampleSite/config.toml 中的配置，还需要在 config.toml 中配置主题：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-abnf&#34; data-lang=&#34;abnf&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;theme&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;l&#34;&gt;&amp;#34;theme-demo&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此外，在有些 theme-demo 文件夹中会有 demo 或 example 目录，文件结构与新建的 Hugo 项目的文件结构几乎是一样的，这样设置是为了用户的配置可以覆盖掉主题的配置。&lt;/p&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://leidawt.github.io/post/%E5%80%9F%E5%8A%A9hugo%E5%92%8Cacademic%E4%B8%BB%E9%A2%98%E5%9C%A8github/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://leidawt.github.io/post/%E5%80%9F%E5%8A%A9hugo%E5%92%8Cacademic%E4%B8%BB%E9%A2%98%E5%9C%A8github/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/%E9%80%B2%E6%93%8A%E7%9A%84-git-git-git/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E7%94%A8github-pages-%E4%B8%8A%E5%82%B3%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-fa2ae83e6276&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://medium.com/%E9%80%B2%E6%93%8A%E7%9A%84-git-git-git/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E7%94%A8github-pages-%E4%B8%8A%E5%82%B3%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-fa2ae83e6276&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/MuYunyun/p/6082359.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.cnblogs.com/MuYunyun/p/6082359.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;show case
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/andrewheiss/datavizs21.classes.andrewheiss.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/andrewheiss/datavizs21.classes.andrewheiss.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://datavizs21.classes.andrewheiss.com/content/05-content/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://datavizs21.classes.andrewheiss.com/content/05-content/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wowchemy.com/templates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://wowchemy.com/templates/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/wowchemy/starter-hugo-research-group&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/wowchemy/starter-hugo-research-group&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

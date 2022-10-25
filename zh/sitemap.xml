@@ -2,11 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jianzhnie.github.io/post/diamond/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <loc>https://jianzhnie.github.io/tag/hugo/</loc>
+    <lastmod>2022-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/post/hugo_site/</loc>
+    <lastmod>2022-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://jianzhnie.github.io/post/</loc>
+    <lastmod>2022-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/</loc>
+    <lastmod>2022-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jianzhnie.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://jianzhnie.github.io/"
+                />
+  </url><url>
+    <loc>https://jianzhnie.github.io/tag/site/</loc>
+    <lastmod>2022-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jianzhnie.github.io/tags/</loc>
+    <lastmod>2022-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jianzhnie.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://jianzhnie.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://jianzhnie.github.io/post/diamond/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -25,34 +65,6 @@
     <loc>https://jianzhnie.github.io/post/python-%E8%A7%A3%E6%9E%90go%E7%9A%84obo%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://jianzhnie.github.io/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jianzhnie.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://jianzhnie.github.io/"
-                />
-  </url><url>
-    <loc>https://jianzhnie.github.io/tags/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jianzhnie.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://jianzhnie.github.io/tags/"
-                />
   </url><url>
     <loc>https://jianzhnie.github.io/tag/%E5%BE%AE%E7%94%9F%E7%89%A9/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
